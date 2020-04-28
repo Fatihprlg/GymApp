@@ -1,0 +1,12 @@
+D:\vs projects\SporSalonuApp\SporSalonu\SporSalonu\bin\Debug\SporSalonu.exe.config
+D:\vs projects\SporSalonuApp\SporSalonu\SporSalonu\bin\Debug\SporSalonu.exe
+D:\vs projects\SporSalonuApp\SporSalonu\SporSalonu\bin\Debug\SporSalonu.pdb
+D:\vs projects\SporSalonuApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.csprojAssemblyReference.cache
+D:\vs projects\SporSalonuApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.Form1.resources
+D:\vs projects\SporSalonuApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.MainMenu.resources
+D:\vs projects\SporSalonuApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.Properties.Resources.resources
+D:\vs projects\SporSalonuApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.signUpPage.resources
+D:\vs projects\SporSalonuApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.csproj.GenerateResource.cache
+D:\vs projects\SporSalonuApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.exe
+D:\vs projects\SporSalonuApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.pdb
+D:\vs projects\SporSalonuApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.addMember.resources
