@@ -45,24 +45,42 @@ namespace SporSalonu
                         break;
                 }
                 member.isActive = true;
-                member.name = nameBox.Text.ToString();
-                member.surname = surnameBox.Text.ToString();
-                member.phoneNumber = numBox.Text.ToString();
-                member.about = aboutBox.Text.ToString();
+                member.name = nameBox.Text;
+                member.surname = surnameBox.Text;
+                member.phoneNumber = numBox.Text;
+                member.about = aboutBox.Text;
+                member.subscription = int.Parse(subscriptionBox.Text);
+                member.eMail = eMailBox.Text;
+                try
+                {
+                    
+                    connection.Open();
+                    SqlCommand addMemberCmd = new SqlCommand("insert into Members (İsim, Soyisim, Numara,  Mail, [Üyelik Tipi], Borç, Hakkında) values (@m1,@m2,@m3,@m4,@m5,@m6,@m7)", connection);
+                    addMemberCmd.Parameters.AddWithValue("@m1", member.name);
+                    addMemberCmd.Parameters.AddWithValue("@m2", member.surname);
+                    addMemberCmd.Parameters.AddWithValue("@m3", member.phoneNumber);
+                    addMemberCmd.Parameters.AddWithValue("@m4", member.eMail);
+                    addMemberCmd.Parameters.AddWithValue("@m5", member.subType);
+                    addMemberCmd.Parameters.AddWithValue("@m6", member.subscription);
+                    addMemberCmd.Parameters.AddWithValue("@m7", member.about);
 
-                connection.Open();
-                SqlCommand addMember = new SqlCommand("insert into Member (İsim, Soyisim, Numara, Üyelik Tipi, Mail, Aidat, Hakkında) values (@m1,@m2,@m3,@m4,@m5,@m6,@m7)", connection);
-                addMember.Parameters.AddWithValue("@m1", member.name);
-                addMember.Parameters.AddWithValue("@m2", member.surname);
-                addMember.Parameters.AddWithValue("@m3", member.phoneNumber);
-                addMember.Parameters.AddWithValue("@m4", member.subType);
-                addMember.Parameters.AddWithValue("@m5", member.eMail);
-                addMember.Parameters.AddWithValue("@m6", member.subscription);
-                addMember.Parameters.AddWithValue("@m7", member.about);
+                    addMemberCmd.ExecuteNonQuery();
 
-                addMember.ExecuteNonQuery();
+                    connection.Close();
 
-                connection.Close();
+                    Form mainMenu = new MainMenu();
+                    mainMenu.Show();
+                    this.Hide();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(member.subscription.ToString());
+                    MessageBox.Show(member.surname);
+                    
+
+                    MessageBox.Show(ex.Message);
+                }
+                
             }
         }
     }

@@ -53,6 +53,7 @@
             this.deleteMember.TabIndex = 4;
             this.deleteMember.Text = "Üye Sil";
             this.deleteMember.UseVisualStyleBackColor = true;
+            this.deleteMember.Click += new System.EventHandler(this.deleteMember_Click);
             // 
             // showMemberStatus
             // 
@@ -72,6 +73,7 @@
             this.membersView.RowTemplate.Height = 24;
             this.membersView.Size = new System.Drawing.Size(657, 426);
             this.membersView.TabIndex = 6;
+            this.membersView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.membersView_CellClick);
             // 
             // MainMenu
             // 

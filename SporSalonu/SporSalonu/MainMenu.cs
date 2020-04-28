@@ -17,18 +17,41 @@ namespace SporSalonu
         public MainMenu()
         {
             InitializeComponent();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from Member", connection);
+
+            dataViewer();
+        }
+
+        private void dataViewer()
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from Members", connection);
             DataSet dataSet = new DataSet();
             dataAdapter.Fill(dataSet);
             membersView.DataSource = dataSet.Tables[0];
-            
         }
        
         private void newMemberBtn_Click(object sender, EventArgs e)
         {
-
+            Form addMember = new addMember();
+            addMember.Show();
+            this.Hide();
+        }
+        string memberName;
+        private void deleteMember_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            SqlCommand delete = new SqlCommand("Delete from Members where İsim = @memberName", connection);
+            delete.Parameters.AddWithValue("@memberName", memberName);
+            delete.ExecuteNonQuery();
+            connection.Close();
+            dataViewer();
         }
 
-        
+        private void membersView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int selectedItem = membersView.SelectedCells[0].RowIndex;
+
+             memberName = membersView.Rows[selectedItem].Cells[0].Value.ToString();
+             
+        }
     }
 }
