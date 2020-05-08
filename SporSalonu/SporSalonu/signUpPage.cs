@@ -31,12 +31,12 @@ namespace SporSalonu
                 businessOwner.password = passwordBox.Text.ToString();
 
                 connection.Open();
-                SqlCommand addBusinessOwner = new SqlCommand("insert into businessOwner (İsim, Soyisim, Şifre, [İşletme Adı], Mail) values (@b1,@b2,@b3,@b4,@b5)", connection);
+                SqlCommand addBusinessOwner = new SqlCommand("insert into businessOwner (Ad, Soyad, KulupAdi, eMail, Sifre) values (@b1,@b2,@b3,@b4,@b5)", connection);
                 addBusinessOwner.Parameters.AddWithValue("@b1", businessOwner.name);
                 addBusinessOwner.Parameters.AddWithValue("@b2", businessOwner.surname);
-                addBusinessOwner.Parameters.AddWithValue("@b3", businessOwner.password);
-                addBusinessOwner.Parameters.AddWithValue("@b4", businessOwner.businessName);
-                addBusinessOwner.Parameters.AddWithValue("@b5", businessOwner.eMail);
+                addBusinessOwner.Parameters.AddWithValue("@b3", businessOwner.businessName);
+                addBusinessOwner.Parameters.AddWithValue("@b4", businessOwner.eMail);
+                addBusinessOwner.Parameters.AddWithValue("@b5", businessOwner.password);
 
                 addBusinessOwner.ExecuteNonQuery();
 

@@ -16,8 +16,8 @@ namespace SporSalonu
         
         public static string remindEMail;
         public static string remindPassword;
-        string eMail;
-        string password;
+        //string eMail;
+        //string password;
 
         SqlConnection connection = new SqlConnection("Data Source=DESKTOP-GROR92P;Initial Catalog=SporSalonu;Integrated Security=True");
         List<BusinessOwner> owners = new List<BusinessOwner>();
@@ -48,11 +48,11 @@ namespace SporSalonu
 
                 while (sqlData.Read())
                 {
-                    businessOwner.name = sqlData["İsim"].ToString();
-                    businessOwner.surname = sqlData["Soyisim"].ToString();
-                    businessOwner.password = sqlData["Şifre"].ToString();
-                    businessOwner.businessName = sqlData["İşletme Adı"].ToString();
-                    businessOwner.eMail = sqlData["Mail"].ToString();
+                    businessOwner.name = sqlData["Ad"].ToString();
+                    businessOwner.surname = sqlData["Soyad"].ToString();
+                    businessOwner.password = sqlData["Sifre"].ToString();
+                    businessOwner.businessName = sqlData["KulupAdi"].ToString();
+                    businessOwner.eMail = sqlData["eMail"].ToString();
                     owners.Add(businessOwner); 
                     break;
                 }

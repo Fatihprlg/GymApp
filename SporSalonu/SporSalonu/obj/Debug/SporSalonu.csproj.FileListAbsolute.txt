@@ -10,3 +10,15 @@ D:\vs projects\SporSalonuApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.csproj.G
 D:\vs projects\SporSalonuApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.exe
 D:\vs projects\SporSalonuApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.pdb
 D:\vs projects\SporSalonuApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.addMember.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\bin\Debug\SporSalonu.exe.config
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\bin\Debug\SporSalonu.exe
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\bin\Debug\SporSalonu.pdb
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.csprojAssemblyReference.cache
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.addMember.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.Form1.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.MainMenu.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.Properties.Resources.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.signUpPage.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.csproj.GenerateResource.cache
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.exe
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.pdb

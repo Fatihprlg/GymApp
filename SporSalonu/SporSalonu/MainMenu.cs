@@ -17,18 +17,37 @@ namespace SporSalonu
         public MainMenu()
         {
             InitializeComponent();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from Member", connection);
-            DataSet dataSet = new DataSet();
-            dataAdapter.Fill(dataSet);
-            membersView.DataSource = dataSet.Tables[0];
+            
             
         }
        
         private void newMemberBtn_Click(object sender, EventArgs e)
         {
-
+            addMember addMember = new addMember();
+            addMember.Show();
+            this.Hide();
         }
 
-        
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            connection.Open();
+            SqlCommand showMembers = new SqlCommand("select * from Members m inner join Branches b on m.ID = b.ID", connection);
+            SqlDataReader membersReader = showMembers.ExecuteReader();
+
+            while (membersReader.Read())
+            {
+                Member mem = new Member();
+                mem.name = membersReader["Ad"].ToString();
+                mem.surname = membersReader["Soyad"].ToString();
+                ListViewItem member = new ListViewItem();
+                member.Text = mem.name + mem.surname;
+                member.SubItems.Add(membersReader["Branch"].ToString());
+                member.SubItems.Add(membersReader["eMail"].ToString());
+                member.SubItems.Add(membersReader["UyelikTipi"].ToString());
+                member.SubItems.Add(membersReader["Borc"].ToString());
+                memberList.Items.Add(member);
+            }
+            connection.Close();
+        }
     }
 }
