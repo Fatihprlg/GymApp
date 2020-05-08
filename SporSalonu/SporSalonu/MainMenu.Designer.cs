@@ -57,6 +57,7 @@
             this.deleteMember.TabIndex = 4;
             this.deleteMember.Text = "Üye Sil";
             this.deleteMember.UseVisualStyleBackColor = true;
+            this.deleteMember.Click += new System.EventHandler(this.deleteMember_Click);
             // 
             // showMemberStatus
             // 

@@ -58,12 +58,12 @@ namespace SporSalonu
                 }
                 sayac++;
             }
-
+            
 
             connection.Close();
             foreach (BusinessOwner o in owners)
             {
-                if (eMailTextBox.Text == o.eMail && passwordTextBox.Text == o.password)
+                if ((eMailTextBox.Text.ToString() == o.eMail.Trim()) && (passwordTextBox.Text == o.password.Trim()))
                 {
                     if (remindMeChck.Checked == true)
                     {
