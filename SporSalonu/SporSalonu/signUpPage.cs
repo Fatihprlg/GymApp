@@ -17,29 +17,32 @@ namespace SporSalonu
         {
             InitializeComponent();
         }
-        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-GROR92P;Initial Catalog=SporSalonu;Integrated Security=True");
+        SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database.mdf;Integrated Security=True;Connect Timeout=30");
 
         private void signUpBtn_Click(object sender, EventArgs e)
         {
             BusinessOwner businessOwner = new BusinessOwner();
             if (passwordBox.Text == passAgainBox.Text)
             {
-                businessOwner.businessName = businessNameBox.Text.ToString();
-                businessOwner.eMail = eMailBox.Text.ToString();
-                businessOwner.name = nameBox.Text.ToString();
-                businessOwner.surname = surnameBox.Text.ToString();
-                businessOwner.password = passwordBox.Text.ToString();
+                businessOwner.businessName = businessNameBox.Text;
+                businessOwner.eMail = eMailBox.Text;
+                businessOwner.name = nameBox.Text;
+                businessOwner.surname = surnameBox.Text;
+                businessOwner.password = passwordBox.Text;
 
                 connection.Open();
-                SqlCommand addBusinessOwner = new SqlCommand("insert into businessOwner (Ad, Soyad, KulupAdi, eMail, Sifre) values (@b1,@b2,@b3,@b4,@b5)", connection);
-                addBusinessOwner.Parameters.AddWithValue("@b1", businessOwner.name);
-                addBusinessOwner.Parameters.AddWithValue("@b2", businessOwner.surname);
-                addBusinessOwner.Parameters.AddWithValue("@b3", businessOwner.businessName);
-                addBusinessOwner.Parameters.AddWithValue("@b4", businessOwner.eMail);
-                addBusinessOwner.Parameters.AddWithValue("@b5", businessOwner.password);
+                SqlCommand signUp = new SqlCommand("insert into businessOwner(Ad, Soyad, [Kulup Adi], eMail, Sifre) values (@Ad, @Soyad, @KulupAdi, @eMail, @Sifre)", connection);
+                signUp.Parameters.AddWithValue("@Ad", businessOwner.name);
+                signUp.Parameters.AddWithValue("@Soyad", businessOwner.surname);
+                signUp.Parameters.AddWithValue("@eMail", businessOwner.eMail);
+                signUp.Parameters.AddWithValue("@KulupAdi", businessOwner.businessName);
+                signUp.Parameters.AddWithValue("@Sifre", businessOwner.password);
 
-                addBusinessOwner.ExecuteNonQuery();
+                this.Validate();
+                this.membersBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.databaseDataSet);
 
+                signUp.ExecuteNonQuery();
                 connection.Close();
 
                 Form entry = new Form1();
@@ -57,5 +60,12 @@ namespace SporSalonu
             entry.Show();
             this.Hide();
         }
+
+        private void signUpPage_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'databaseDataSet.businessOwner' table. You can move, or remove it, as needed.
+            this.businessOwnerTableAdapter.Fill(this.databaseDataSet.businessOwner);
+        }
+
     }
 }

@@ -17,17 +17,17 @@ namespace SporSalonu
         {
             InitializeComponent();
         }
-        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-GROR92P;Initial Catalog=SporSalonu;Integrated Security=True");
+        SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database.mdf;Integrated Security=True;Connect Timeout=30");
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
             Member member = new Member();
-            if (!(string.IsNullOrEmpty(nameBox.Text)))
+            if (!(string.IsNullOrEmpty(adTextBox.Text)))
             {
                
                 while (true)
                 {
-                    switch (memberTypeBox.SelectedIndex)
+                    switch (uyelikTipiComboBox.SelectedIndex)
                     {
                         case 0:
                             member.subType = "Aylık";
@@ -46,45 +46,58 @@ namespace SporSalonu
                         break;
                 }
                 member.isActive = true;
-                member.name = nameBox.Text;
-                member.surname = surnameBox.Text;
-                member.phoneNumber = numBox.Text;
-                member.about = aboutBox.Text;
-                member.eMail = eMailBox.Text;
-                member.subscription = int.Parse(subscriptionBox.Text);
+                member.name = adTextBox.Text;
+                member.surname = soyadTextBox.Text;
+                member.phoneNumber = numaraTextBox.Text;
+                member.about = hakkindaTextBox.Text;
+                member.eMail = eMailTextBox.Text;
+                member.subscription = int.Parse(borcTextBox.Text);
 
                 
                 try
                 {
+                    //this.memberInfoBindingSource.AddNew();
+                    
                     connection.Open();
-                    SqlCommand addMember = new SqlCommand("insert into Members (Ad, Soyad, Numara, UyelikTipi, eMail, Borc, Hakkinda, Antrenor, BranşID, photoUrl) values (@m1,@m2,@m3,@m4,@m5,@m6,@m7,@m8,@m9,@m10)", connection);
-                    addMember.Parameters.AddWithValue("@m1", member.name);
-                    addMember.Parameters.AddWithValue("@m2", member.surname);
-                    addMember.Parameters.AddWithValue("@m3", member.phoneNumber);
-                    addMember.Parameters.AddWithValue("@m4", member.subType);
-                    addMember.Parameters.AddWithValue("@m5", member.eMail);
-                    addMember.Parameters.AddWithValue("@m6", member.subscription);
-                    addMember.Parameters.AddWithValue("@m7", member.about);
-                    addMember.Parameters.AddWithValue("@m8", comboBox1.SelectedIndex + 1);
-                    addMember.Parameters.AddWithValue("@m9", comboBox2.SelectedIndex + 1);
-                    addMember.Parameters.AddWithValue("@m10", browseBox.Text);
+                    SqlCommand addMember = new SqlCommand("insert into Members(Ad, Soyad, Numara, [Uyelik Tipi], eMail, Borc, Hakkinda, Antrenor, Brans, Fotograf, Aktiflik, [Kayıt Tarihi]) values (@Ad, @Soyad, @Numara, @UyelikTipi, @eMail, @Borc, @Hakkinda, @Antrenor, @Brans, @Fotograf, @Aktiflik, @KayıtTarihi)", connection);
+                    addMember.Parameters.AddWithValue("@Ad", member.name);
+                    addMember.Parameters.AddWithValue("@Soyad", member.surname);
+                    addMember.Parameters.AddWithValue("@Numara", member.phoneNumber);
+                    addMember.Parameters.AddWithValue("@UyelikTipi", member.subType);
+                    addMember.Parameters.AddWithValue("@eMail", member.eMail);
+                    addMember.Parameters.AddWithValue("@Borc", member.subscription);
+                    addMember.Parameters.AddWithValue("@Hakkinda", member.about);
+                    addMember.Parameters.AddWithValue("@Antrenor", antrenorComboBox.SelectedIndex + 1);
+                    addMember.Parameters.AddWithValue("@Brans", bransComboBox.SelectedIndex + 1);
+                    addMember.Parameters.AddWithValue("@Fotograf", browseBox.Text);
+                    addMember.Parameters.AddWithValue("@Aktiflik", 1);
+                    addMember.Parameters.AddWithValue("@KayıtTarihi", DateTime.Now);
 
-                    SqlCommand addMemberDetail = new SqlCommand("insert into MemberInfo (TC_ID, AnneAdi, BabaAdi, DogumYeri, DogumTarihi, Cinsiyet, Boy, Kilo) values (@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8)");
-                    addMemberDetail.Parameters.AddWithValue("@p1", tckBox.Text);
-                    addMemberDetail.Parameters.AddWithValue("@p2", motherNameBox.Text);
-                    addMemberDetail.Parameters.AddWithValue("@p3", fatherNameBox.Text);
-                    addMemberDetail.Parameters.AddWithValue("@p4", birthPlaceBox.Text);
-                    addMemberDetail.Parameters.AddWithValue("@p5", birthDateT.Value);
-                    addMemberDetail.Parameters.AddWithValue("@p6", genderBox.Text);
-                    addMemberDetail.Parameters.AddWithValue("@p7", lengthBox.Text);
-                    addMemberDetail.Parameters.AddWithValue("@p8", kiloBox.Text);
 
-                    addMemberDetail.ExecuteNonQuery();
                     addMember.ExecuteNonQuery();
-
                     connection.Close();
 
-                    Form mainMenu = new MainMenu();
+                    connection.Open();
+                    SqlCommand addMemberDetail = new SqlCommand("insert into memberInfo(TC, [Anne Adi], [Baba Adi], [Dogum Yeri], [Dogum Tarihi], Cinsiyet, Boy, Kilo) values (@TC, @AnneAdi, @BabaAdi, @DogumYeri, @DogumTarihi, @Cinsiyet, @Boy, @Kilo)", connection);
+                    
+                    addMemberDetail.Parameters.AddWithValue("@TC", tCTextBox.Text);
+                    addMemberDetail.Parameters.AddWithValue("@AnneAdi", anne_AdiTextBox.Text);
+                    addMemberDetail.Parameters.AddWithValue("@BabaAdi", baba_AdiTextBox.Text);
+                    addMemberDetail.Parameters.AddWithValue("@DogumYeri", dogum_YeriTextBox.Text);
+                    addMemberDetail.Parameters.AddWithValue("@DogumTarihi", dogumTarihiDateTimePicker.Value);
+                    addMemberDetail.Parameters.AddWithValue("@Cinsiyet", cinsiyet_TextBox.Text);
+                    addMemberDetail.Parameters.AddWithValue("@Boy", int.Parse(boyTextBox.Text));
+                    addMemberDetail.Parameters.AddWithValue("@Kilo", int.Parse(kiloTextBox.Text));
+
+
+                    addMemberDetail.ExecuteNonQuery();
+                    connection.Close();
+                    this.Validate();
+                    this.membersBindingSource.EndEdit();
+                    this.memberInfoBindingSource.EndEdit();
+                    this.tableAdapterManager.UpdateAll(this.databaseDataSet);
+
+                    MainMenu mainMenu = new MainMenu();
                     mainMenu.Show();
                     this.Hide();
                 }
@@ -106,24 +119,44 @@ namespace SporSalonu
 
         private void addMember_Load(object sender, EventArgs e)
         {
-            connection.Open();
-            SqlCommand command = new SqlCommand("select * from coachs", connection);
-            SqlDataReader reader = command.ExecuteReader();
+            // TODO: This line of code loads data into the 'databaseDataSet.memberInfo' table. You can move, or remove it, as needed.
+            this.memberInfoTableAdapter.Fill(this.databaseDataSet.memberInfo);
+            // TODO: This line of code loads data into the 'databaseDataSet.Members' table. You can move, or remove it, as needed.
+            this.membersTableAdapter.Fill(this.databaseDataSet.Members);
 
-            while (reader.Read())
-                comboBox1.Items.Add(reader["Ad"].ToString() + reader["Soyad"].ToString());
+            try
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("select * from Coaches", connection);
+                SqlDataReader reader = command.ExecuteReader();
 
-            connection.Close();
-            connection.Open();
+                while (reader.Read())
+                    antrenorComboBox.Items.Add(reader["Ad"].ToString() + reader["Soyad"].ToString());
 
-            SqlCommand command2 = new SqlCommand("select * from branches", connection);
-            SqlDataReader reader2 = command2.ExecuteReader();
+                connection.Close();
+                connection.Open();
 
-            while (reader2.Read())
-                comboBox2.Items.Add(reader2["Branch"].ToString());
+                SqlCommand command2 = new SqlCommand("select * from Branches", connection);
+                SqlDataReader reader2 = command2.ExecuteReader();
 
-            connection.Close();
+                while (reader2.Read())
+                    bransComboBox.Items.Add(reader2["Brans Adi"].ToString());
 
+                connection.Close();
+            }
+            catch (Exception ex2)
+            {
+                MessageBox.Show(ex2.Message);
+            }
+            
+
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.Show();
+            this.Hide();
         }
     }
 }

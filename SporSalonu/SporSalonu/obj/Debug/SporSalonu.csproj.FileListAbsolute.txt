@@ -13,7 +13,6 @@ D:\vs projects\SporSalonuApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.addMembe
 C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\bin\Debug\SporSalonu.exe.config
 C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\bin\Debug\SporSalonu.exe
 C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\bin\Debug\SporSalonu.pdb
-C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.csprojAssemblyReference.cache
 C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.addMember.resources
 C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.Form1.resources
 C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.MainMenu.resources
@@ -22,3 +21,14 @@ C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalon
 C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.csproj.GenerateResource.cache
 C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.exe
 C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.pdb
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\bin\Debug\Database.mdf
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\bin\Debug\Database_log.ldf
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.Coachs.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.AddCoach.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.MemberDetails.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.UpdateCoach.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.AddProduct.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.Products.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.SellProduct.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.csproj.ResolveComReference.cache
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.Accounting.resources

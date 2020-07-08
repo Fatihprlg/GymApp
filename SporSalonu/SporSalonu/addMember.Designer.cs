@@ -28,52 +28,266 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label adLabel;
+            System.Windows.Forms.Label soyadLabel;
+            System.Windows.Forms.Label numaraLabel;
+            System.Windows.Forms.Label uyelik_TipiLabel;
+            System.Windows.Forms.Label eMailLabel;
+            System.Windows.Forms.Label borcLabel;
+            System.Windows.Forms.Label hakkindaLabel;
+            System.Windows.Forms.Label tCLabel;
+            System.Windows.Forms.Label anne_AdiLabel;
+            System.Windows.Forms.Label baba_AdiLabel;
+            System.Windows.Forms.Label dogum_YeriLabel;
+            System.Windows.Forms.Label dogum_TarihiLabel;
+            System.Windows.Forms.Label cinsiyet_Label;
+            System.Windows.Forms.Label boyLabel;
+            System.Windows.Forms.Label kiloLabel;
+            System.Windows.Forms.Label antrenorLabel;
+            System.Windows.Forms.Label bransLabel;
             this.saveBtn = new System.Windows.Forms.Button();
-            this.nameBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.eMailBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.aboutBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.subscriptionBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.surnameBox = new System.Windows.Forms.TextBox();
             this.cancelBtn = new System.Windows.Forms.Button();
-            this.memberTypeBox = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.TC = new System.Windows.Forms.Label();
-            this.tckBox = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.motherNameBox = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.fatherNameBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.birthPlaceBox = new System.Windows.Forms.TextBox();
-            this.birthDateT = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.genderBox = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lengthBox = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.kiloBox = new System.Windows.Forms.TextBox();
-            this.browseBox = new System.Windows.Forms.TextBox();
             this.browseBtn = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.databaseDataSet = new SporSalonu.DatabaseDataSet();
+            this.membersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.membersTableAdapter = new SporSalonu.DatabaseDataSetTableAdapters.MembersTableAdapter();
+            this.tableAdapterManager = new SporSalonu.DatabaseDataSetTableAdapters.TableAdapterManager();
+            this.memberInfoTableAdapter = new SporSalonu.DatabaseDataSetTableAdapters.memberInfoTableAdapter();
+            this.adTextBox = new System.Windows.Forms.TextBox();
+            this.soyadTextBox = new System.Windows.Forms.TextBox();
+            this.numaraTextBox = new System.Windows.Forms.TextBox();
+            this.uyelikTipiComboBox = new System.Windows.Forms.ComboBox();
+            this.eMailTextBox = new System.Windows.Forms.TextBox();
+            this.borcTextBox = new System.Windows.Forms.TextBox();
+            this.hakkindaTextBox = new System.Windows.Forms.TextBox();
+            this.memberInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tCTextBox = new System.Windows.Forms.TextBox();
+            this.anne_AdiTextBox = new System.Windows.Forms.TextBox();
+            this.baba_AdiTextBox = new System.Windows.Forms.TextBox();
+            this.dogum_YeriTextBox = new System.Windows.Forms.TextBox();
+            this.dogumTarihiDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.cinsiyet_TextBox = new System.Windows.Forms.TextBox();
+            this.boyTextBox = new System.Windows.Forms.TextBox();
+            this.kiloTextBox = new System.Windows.Forms.TextBox();
+            this.antrenorComboBox = new System.Windows.Forms.ComboBox();
+            this.bransComboBox = new System.Windows.Forms.ComboBox();
+            this.browseBox = new System.Windows.Forms.TextBox();
+            adLabel = new System.Windows.Forms.Label();
+            soyadLabel = new System.Windows.Forms.Label();
+            numaraLabel = new System.Windows.Forms.Label();
+            uyelik_TipiLabel = new System.Windows.Forms.Label();
+            eMailLabel = new System.Windows.Forms.Label();
+            borcLabel = new System.Windows.Forms.Label();
+            hakkindaLabel = new System.Windows.Forms.Label();
+            tCLabel = new System.Windows.Forms.Label();
+            anne_AdiLabel = new System.Windows.Forms.Label();
+            baba_AdiLabel = new System.Windows.Forms.Label();
+            dogum_YeriLabel = new System.Windows.Forms.Label();
+            dogum_TarihiLabel = new System.Windows.Forms.Label();
+            cinsiyet_Label = new System.Windows.Forms.Label();
+            boyLabel = new System.Windows.Forms.Label();
+            kiloLabel = new System.Windows.Forms.Label();
+            antrenorLabel = new System.Windows.Forms.Label();
+            bransLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memberInfoBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // adLabel
+            // 
+            adLabel.AutoSize = true;
+            adLabel.BackColor = System.Drawing.Color.Transparent;
+            adLabel.ForeColor = System.Drawing.Color.Orange;
+            adLabel.Location = new System.Drawing.Point(55, 36);
+            adLabel.Name = "adLabel";
+            adLabel.Size = new System.Drawing.Size(29, 17);
+            adLabel.TabIndex = 45;
+            adLabel.Text = "Ad:";
+            // 
+            // soyadLabel
+            // 
+            soyadLabel.AutoSize = true;
+            soyadLabel.BackColor = System.Drawing.Color.Transparent;
+            soyadLabel.ForeColor = System.Drawing.Color.Orange;
+            soyadLabel.Location = new System.Drawing.Point(55, 64);
+            soyadLabel.Name = "soyadLabel";
+            soyadLabel.Size = new System.Drawing.Size(52, 17);
+            soyadLabel.TabIndex = 47;
+            soyadLabel.Text = "Soyad:";
+            // 
+            // numaraLabel
+            // 
+            numaraLabel.AutoSize = true;
+            numaraLabel.BackColor = System.Drawing.Color.Transparent;
+            numaraLabel.ForeColor = System.Drawing.Color.Orange;
+            numaraLabel.Location = new System.Drawing.Point(55, 92);
+            numaraLabel.Name = "numaraLabel";
+            numaraLabel.Size = new System.Drawing.Size(62, 17);
+            numaraLabel.TabIndex = 49;
+            numaraLabel.Text = "Numara:";
+            // 
+            // uyelik_TipiLabel
+            // 
+            uyelik_TipiLabel.AutoSize = true;
+            uyelik_TipiLabel.BackColor = System.Drawing.Color.Transparent;
+            uyelik_TipiLabel.ForeColor = System.Drawing.Color.Orange;
+            uyelik_TipiLabel.Location = new System.Drawing.Point(55, 120);
+            uyelik_TipiLabel.Name = "uyelik_TipiLabel";
+            uyelik_TipiLabel.Size = new System.Drawing.Size(77, 17);
+            uyelik_TipiLabel.TabIndex = 51;
+            uyelik_TipiLabel.Text = "Uyelik Tipi:";
+            // 
+            // eMailLabel
+            // 
+            eMailLabel.AutoSize = true;
+            eMailLabel.BackColor = System.Drawing.Color.Transparent;
+            eMailLabel.ForeColor = System.Drawing.Color.Orange;
+            eMailLabel.Location = new System.Drawing.Point(55, 151);
+            eMailLabel.Name = "eMailLabel";
+            eMailLabel.Size = new System.Drawing.Size(51, 17);
+            eMailLabel.TabIndex = 53;
+            eMailLabel.Text = "E-Mail:";
+            // 
+            // borcLabel
+            // 
+            borcLabel.AutoSize = true;
+            borcLabel.BackColor = System.Drawing.Color.Transparent;
+            borcLabel.ForeColor = System.Drawing.Color.Orange;
+            borcLabel.Location = new System.Drawing.Point(55, 179);
+            borcLabel.Name = "borcLabel";
+            borcLabel.Size = new System.Drawing.Size(44, 17);
+            borcLabel.TabIndex = 55;
+            borcLabel.Text = "Aidat:";
+            // 
+            // hakkindaLabel
+            // 
+            hakkindaLabel.AutoSize = true;
+            hakkindaLabel.BackColor = System.Drawing.Color.Transparent;
+            hakkindaLabel.ForeColor = System.Drawing.Color.Orange;
+            hakkindaLabel.Location = new System.Drawing.Point(55, 207);
+            hakkindaLabel.Name = "hakkindaLabel";
+            hakkindaLabel.Size = new System.Drawing.Size(71, 17);
+            hakkindaLabel.TabIndex = 57;
+            hakkindaLabel.Text = "Hakkinda:";
+            // 
+            // tCLabel
+            // 
+            tCLabel.AutoSize = true;
+            tCLabel.BackColor = System.Drawing.Color.Transparent;
+            tCLabel.ForeColor = System.Drawing.Color.Orange;
+            tCLabel.Location = new System.Drawing.Point(320, 34);
+            tCLabel.Name = "tCLabel";
+            tCLabel.Size = new System.Drawing.Size(30, 17);
+            tCLabel.TabIndex = 60;
+            tCLabel.Text = "TC:";
+            // 
+            // anne_AdiLabel
+            // 
+            anne_AdiLabel.AutoSize = true;
+            anne_AdiLabel.BackColor = System.Drawing.Color.Transparent;
+            anne_AdiLabel.ForeColor = System.Drawing.Color.Orange;
+            anne_AdiLabel.Location = new System.Drawing.Point(320, 62);
+            anne_AdiLabel.Name = "anne_AdiLabel";
+            anne_AdiLabel.Size = new System.Drawing.Size(69, 17);
+            anne_AdiLabel.TabIndex = 62;
+            anne_AdiLabel.Text = "Anne Adi:";
+            // 
+            // baba_AdiLabel
+            // 
+            baba_AdiLabel.AutoSize = true;
+            baba_AdiLabel.BackColor = System.Drawing.Color.Transparent;
+            baba_AdiLabel.ForeColor = System.Drawing.Color.Orange;
+            baba_AdiLabel.Location = new System.Drawing.Point(320, 90);
+            baba_AdiLabel.Name = "baba_AdiLabel";
+            baba_AdiLabel.Size = new System.Drawing.Size(69, 17);
+            baba_AdiLabel.TabIndex = 64;
+            baba_AdiLabel.Text = "Baba Adi:";
+            // 
+            // dogum_YeriLabel
+            // 
+            dogum_YeriLabel.AutoSize = true;
+            dogum_YeriLabel.BackColor = System.Drawing.Color.Transparent;
+            dogum_YeriLabel.ForeColor = System.Drawing.Color.Orange;
+            dogum_YeriLabel.Location = new System.Drawing.Point(320, 118);
+            dogum_YeriLabel.Name = "dogum_YeriLabel";
+            dogum_YeriLabel.Size = new System.Drawing.Size(86, 17);
+            dogum_YeriLabel.TabIndex = 66;
+            dogum_YeriLabel.Text = "Dogum Yeri:";
+            // 
+            // dogum_TarihiLabel
+            // 
+            dogum_TarihiLabel.AutoSize = true;
+            dogum_TarihiLabel.BackColor = System.Drawing.Color.Transparent;
+            dogum_TarihiLabel.ForeColor = System.Drawing.Color.Orange;
+            dogum_TarihiLabel.Location = new System.Drawing.Point(320, 147);
+            dogum_TarihiLabel.Name = "dogum_TarihiLabel";
+            dogum_TarihiLabel.Size = new System.Drawing.Size(97, 17);
+            dogum_TarihiLabel.TabIndex = 68;
+            dogum_TarihiLabel.Text = "Dogum Tarihi:";
+            // 
+            // cinsiyet_Label
+            // 
+            cinsiyet_Label.AutoSize = true;
+            cinsiyet_Label.BackColor = System.Drawing.Color.Transparent;
+            cinsiyet_Label.ForeColor = System.Drawing.Color.Orange;
+            cinsiyet_Label.Location = new System.Drawing.Point(320, 174);
+            cinsiyet_Label.Name = "cinsiyet_Label";
+            cinsiyet_Label.Size = new System.Drawing.Size(65, 17);
+            cinsiyet_Label.TabIndex = 70;
+            cinsiyet_Label.Text = "Cinsiyet :";
+            // 
+            // boyLabel
+            // 
+            boyLabel.AutoSize = true;
+            boyLabel.BackColor = System.Drawing.Color.Transparent;
+            boyLabel.ForeColor = System.Drawing.Color.Orange;
+            boyLabel.Location = new System.Drawing.Point(320, 202);
+            boyLabel.Name = "boyLabel";
+            boyLabel.Size = new System.Drawing.Size(36, 17);
+            boyLabel.TabIndex = 72;
+            boyLabel.Text = "Boy:";
+            // 
+            // kiloLabel
+            // 
+            kiloLabel.AutoSize = true;
+            kiloLabel.BackColor = System.Drawing.Color.Transparent;
+            kiloLabel.ForeColor = System.Drawing.Color.Orange;
+            kiloLabel.Location = new System.Drawing.Point(320, 230);
+            kiloLabel.Name = "kiloLabel";
+            kiloLabel.Size = new System.Drawing.Size(35, 17);
+            kiloLabel.TabIndex = 74;
+            kiloLabel.Text = "Kilo:";
+            // 
+            // antrenorLabel
+            // 
+            antrenorLabel.AutoSize = true;
+            antrenorLabel.BackColor = System.Drawing.Color.Transparent;
+            antrenorLabel.ForeColor = System.Drawing.Color.Orange;
+            antrenorLabel.Location = new System.Drawing.Point(320, 258);
+            antrenorLabel.Name = "antrenorLabel";
+            antrenorLabel.Size = new System.Drawing.Size(67, 17);
+            antrenorLabel.TabIndex = 75;
+            antrenorLabel.Text = "Antrenor:";
+            // 
+            // bransLabel
+            // 
+            bransLabel.AutoSize = true;
+            bransLabel.BackColor = System.Drawing.Color.Transparent;
+            bransLabel.ForeColor = System.Drawing.Color.Orange;
+            bransLabel.Location = new System.Drawing.Point(320, 288);
+            bransLabel.Name = "bransLabel";
+            bransLabel.Size = new System.Drawing.Size(49, 17);
+            bransLabel.TabIndex = 76;
+            bransLabel.Text = "Brans:";
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(235, 297);
+            this.saveBtn.Location = new System.Drawing.Point(736, 278);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 31);
             this.saveBtn.TabIndex = 0;
@@ -81,279 +295,25 @@
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
-            // nameBox
-            // 
-            this.nameBox.Location = new System.Drawing.Point(75, 33);
-            this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(235, 22);
-            this.nameBox.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "İsim";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 122);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Numara";
-            // 
-            // numBox
-            // 
-            this.numBox.Location = new System.Drawing.Point(75, 119);
-            this.numBox.Name = "numBox";
-            this.numBox.Size = new System.Drawing.Size(235, 22);
-            this.numBox.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 94);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "E Mail";
-            // 
-            // eMailBox
-            // 
-            this.eMailBox.Location = new System.Drawing.Point(75, 91);
-            this.eMailBox.Name = "eMailBox";
-            this.eMailBox.Size = new System.Drawing.Size(235, 22);
-            this.eMailBox.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(2, 211);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 17);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Hakkında";
-            // 
-            // aboutBox
-            // 
-            this.aboutBox.Location = new System.Drawing.Point(75, 208);
-            this.aboutBox.Multiline = true;
-            this.aboutBox.Name = "aboutBox";
-            this.aboutBox.Size = new System.Drawing.Size(235, 83);
-            this.aboutBox.TabIndex = 7;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 150);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 17);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Aidat";
-            // 
-            // subscriptionBox
-            // 
-            this.subscriptionBox.Location = new System.Drawing.Point(75, 147);
-            this.subscriptionBox.Name = "subscriptionBox";
-            this.subscriptionBox.Size = new System.Drawing.Size(235, 22);
-            this.subscriptionBox.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 178);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 17);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Üye Tipi";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 64);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 17);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Soyisim";
-            // 
-            // surnameBox
-            // 
-            this.surnameBox.Location = new System.Drawing.Point(75, 61);
-            this.surnameBox.Name = "surnameBox";
-            this.surnameBox.Size = new System.Drawing.Size(235, 22);
-            this.surnameBox.TabIndex = 15;
-            // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(154, 297);
+            this.cancelBtn.Location = new System.Drawing.Point(655, 278);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 31);
             this.cancelBtn.TabIndex = 17;
             this.cancelBtn.Text = "İptal";
             this.cancelBtn.UseVisualStyleBackColor = true;
-            // 
-            // memberTypeBox
-            // 
-            this.memberTypeBox.FormattingEnabled = true;
-            this.memberTypeBox.Items.AddRange(new object[] {
-            "Aylık",
-            "Yıllık",
-            "Premium"});
-            this.memberTypeBox.Location = new System.Drawing.Point(75, 175);
-            this.memberTypeBox.Name = "memberTypeBox";
-            this.memberTypeBox.Size = new System.Drawing.Size(235, 24);
-            this.memberTypeBox.TabIndex = 18;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Silver;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
             this.pictureBox1.Location = new System.Drawing.Point(653, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(150, 188);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
-            // 
-            // TC
-            // 
-            this.TC.AutoSize = true;
-            this.TC.Location = new System.Drawing.Point(349, 33);
-            this.TC.Name = "TC";
-            this.TC.Size = new System.Drawing.Size(57, 17);
-            this.TC.TabIndex = 21;
-            this.TC.Text = "TCK No";
-            // 
-            // tckBox
-            // 
-            this.tckBox.Location = new System.Drawing.Point(412, 33);
-            this.tckBox.Name = "tckBox";
-            this.tckBox.Size = new System.Drawing.Size(235, 22);
-            this.tckBox.TabIndex = 20;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(341, 64);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 17);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Anne Adı";
-            // 
-            // motherNameBox
-            // 
-            this.motherNameBox.Location = new System.Drawing.Point(412, 61);
-            this.motherNameBox.Name = "motherNameBox";
-            this.motherNameBox.Size = new System.Drawing.Size(235, 22);
-            this.motherNameBox.TabIndex = 22;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(341, 94);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 17);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "Baba Adı";
-            // 
-            // fatherNameBox
-            // 
-            this.fatherNameBox.Location = new System.Drawing.Point(412, 91);
-            this.fatherNameBox.Name = "fatherNameBox";
-            this.fatherNameBox.Size = new System.Drawing.Size(235, 22);
-            this.fatherNameBox.TabIndex = 24;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(324, 122);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 17);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Doğum Yeri";
-            // 
-            // birthPlaceBox
-            // 
-            this.birthPlaceBox.Location = new System.Drawing.Point(412, 122);
-            this.birthPlaceBox.Name = "birthPlaceBox";
-            this.birthPlaceBox.Size = new System.Drawing.Size(235, 22);
-            this.birthPlaceBox.TabIndex = 26;
-            // 
-            // birthDateT
-            // 
-            this.birthDateT.Location = new System.Drawing.Point(412, 150);
-            this.birthDateT.Name = "birthDateT";
-            this.birthDateT.Size = new System.Drawing.Size(200, 22);
-            this.birthDateT.TabIndex = 28;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(313, 150);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 17);
-            this.label11.TabIndex = 29;
-            this.label11.Text = "Doğum Tarihi";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(349, 181);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 17);
-            this.label12.TabIndex = 31;
-            this.label12.Text = "Cinsiyet";
-            // 
-            // genderBox
-            // 
-            this.genderBox.Location = new System.Drawing.Point(412, 178);
-            this.genderBox.Name = "genderBox";
-            this.genderBox.Size = new System.Drawing.Size(235, 22);
-            this.genderBox.TabIndex = 30;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(374, 209);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(32, 17);
-            this.label13.TabIndex = 33;
-            this.label13.Text = "Boy";
-            // 
-            // lengthBox
-            // 
-            this.lengthBox.Location = new System.Drawing.Point(412, 206);
-            this.lengthBox.Name = "lengthBox";
-            this.lengthBox.Size = new System.Drawing.Size(235, 22);
-            this.lengthBox.TabIndex = 32;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(374, 237);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(31, 17);
-            this.label14.TabIndex = 35;
-            this.label14.Text = "Kilo";
-            // 
-            // kiloBox
-            // 
-            this.kiloBox.Location = new System.Drawing.Point(412, 234);
-            this.kiloBox.Name = "kiloBox";
-            this.kiloBox.Size = new System.Drawing.Size(235, 22);
-            this.kiloBox.TabIndex = 34;
-            // 
-            // browseBox
-            // 
-            this.browseBox.BackColor = System.Drawing.Color.Silver;
-            this.browseBox.ForeColor = System.Drawing.Color.Silver;
-            this.browseBox.Location = new System.Drawing.Point(653, 206);
-            this.browseBox.Name = "browseBox";
-            this.browseBox.Size = new System.Drawing.Size(111, 22);
-            this.browseBox.TabIndex = 36;
             // 
             // browseBtn
             // 
@@ -365,93 +325,260 @@
             this.browseBtn.UseVisualStyleBackColor = true;
             this.browseBtn.Click += new System.EventHandler(this.browseBtn_Click);
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(343, 265);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(63, 17);
-            this.label15.TabIndex = 39;
-            this.label15.Text = "Antrenör";
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // comboBox1
+            // databaseDataSet
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(412, 262);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(235, 24);
-            this.comboBox1.TabIndex = 40;
+            this.databaseDataSet.DataSetName = "DatabaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // comboBox2
+            // membersBindingSource
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(412, 292);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(235, 24);
-            this.comboBox2.TabIndex = 42;
+            this.membersBindingSource.DataMember = "Members";
+            this.membersBindingSource.DataSource = this.databaseDataSet;
             // 
-            // label16
+            // membersTableAdapter
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(360, 295);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(45, 17);
-            this.label16.TabIndex = 41;
-            this.label16.Text = "Branş";
+            this.membersTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BranchesTableAdapter = null;
+            this.tableAdapterManager.BransUyeTableAdapter = null;
+            this.tableAdapterManager.businessOwnerTableAdapter = null;
+            this.tableAdapterManager.CoachesTableAdapter = null;
+            this.tableAdapterManager.memberInfoTableAdapter = this.memberInfoTableAdapter;
+            this.tableAdapterManager.MembersTableAdapter = this.membersTableAdapter;
+            this.tableAdapterManager.ProductsTableAdapter = null;
+            this.tableAdapterManager.SellTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = SporSalonu.DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // memberInfoTableAdapter
+            // 
+            this.memberInfoTableAdapter.ClearBeforeFill = true;
+            // 
+            // adTextBox
+            // 
+            this.adTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.membersBindingSource, "Ad", true));
+            this.adTextBox.Location = new System.Drawing.Point(138, 33);
+            this.adTextBox.Name = "adTextBox";
+            this.adTextBox.Size = new System.Drawing.Size(167, 22);
+            this.adTextBox.TabIndex = 46;
+            // 
+            // soyadTextBox
+            // 
+            this.soyadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.membersBindingSource, "Soyad", true));
+            this.soyadTextBox.Location = new System.Drawing.Point(138, 61);
+            this.soyadTextBox.Name = "soyadTextBox";
+            this.soyadTextBox.Size = new System.Drawing.Size(167, 22);
+            this.soyadTextBox.TabIndex = 48;
+            // 
+            // numaraTextBox
+            // 
+            this.numaraTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.membersBindingSource, "Numara", true));
+            this.numaraTextBox.Location = new System.Drawing.Point(138, 89);
+            this.numaraTextBox.Name = "numaraTextBox";
+            this.numaraTextBox.Size = new System.Drawing.Size(167, 22);
+            this.numaraTextBox.TabIndex = 50;
+            // 
+            // uyelikTipiComboBox
+            // 
+            this.uyelikTipiComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.uyelikTipiComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.uyelikTipiComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.membersBindingSource, "Uyelik Tipi", true));
+            this.uyelikTipiComboBox.FormattingEnabled = true;
+            this.uyelikTipiComboBox.Items.AddRange(new object[] {
+            "Aylık",
+            "Yıllık",
+            "Premium"});
+            this.uyelikTipiComboBox.Location = new System.Drawing.Point(138, 117);
+            this.uyelikTipiComboBox.Name = "uyelikTipiComboBox";
+            this.uyelikTipiComboBox.Size = new System.Drawing.Size(167, 24);
+            this.uyelikTipiComboBox.TabIndex = 52;
+            // 
+            // eMailTextBox
+            // 
+            this.eMailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.membersBindingSource, "eMail", true));
+            this.eMailTextBox.Location = new System.Drawing.Point(138, 148);
+            this.eMailTextBox.Name = "eMailTextBox";
+            this.eMailTextBox.Size = new System.Drawing.Size(167, 22);
+            this.eMailTextBox.TabIndex = 54;
+            // 
+            // borcTextBox
+            // 
+            this.borcTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.membersBindingSource, "Borc", true));
+            this.borcTextBox.Location = new System.Drawing.Point(138, 176);
+            this.borcTextBox.Name = "borcTextBox";
+            this.borcTextBox.Size = new System.Drawing.Size(167, 22);
+            this.borcTextBox.TabIndex = 56;
+            // 
+            // hakkindaTextBox
+            // 
+            this.hakkindaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.membersBindingSource, "Hakkinda", true));
+            this.hakkindaTextBox.Location = new System.Drawing.Point(138, 207);
+            this.hakkindaTextBox.Multiline = true;
+            this.hakkindaTextBox.Name = "hakkindaTextBox";
+            this.hakkindaTextBox.Size = new System.Drawing.Size(167, 98);
+            this.hakkindaTextBox.TabIndex = 58;
+            // 
+            // memberInfoBindingSource
+            // 
+            this.memberInfoBindingSource.DataMember = "memberInfo";
+            this.memberInfoBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // tCTextBox
+            // 
+            this.tCTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.memberInfoBindingSource, "TC", true));
+            this.tCTextBox.Location = new System.Drawing.Point(423, 31);
+            this.tCTextBox.Name = "tCTextBox";
+            this.tCTextBox.Size = new System.Drawing.Size(200, 22);
+            this.tCTextBox.TabIndex = 61;
+            // 
+            // anne_AdiTextBox
+            // 
+            this.anne_AdiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.memberInfoBindingSource, "Anne Adi", true));
+            this.anne_AdiTextBox.Location = new System.Drawing.Point(423, 59);
+            this.anne_AdiTextBox.Name = "anne_AdiTextBox";
+            this.anne_AdiTextBox.Size = new System.Drawing.Size(200, 22);
+            this.anne_AdiTextBox.TabIndex = 63;
+            // 
+            // baba_AdiTextBox
+            // 
+            this.baba_AdiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.memberInfoBindingSource, "Baba Adi", true));
+            this.baba_AdiTextBox.Location = new System.Drawing.Point(423, 87);
+            this.baba_AdiTextBox.Name = "baba_AdiTextBox";
+            this.baba_AdiTextBox.Size = new System.Drawing.Size(200, 22);
+            this.baba_AdiTextBox.TabIndex = 65;
+            // 
+            // dogum_YeriTextBox
+            // 
+            this.dogum_YeriTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.memberInfoBindingSource, "Dogum Yeri", true));
+            this.dogum_YeriTextBox.Location = new System.Drawing.Point(423, 115);
+            this.dogum_YeriTextBox.Name = "dogum_YeriTextBox";
+            this.dogum_YeriTextBox.Size = new System.Drawing.Size(200, 22);
+            this.dogum_YeriTextBox.TabIndex = 67;
+            // 
+            // dogumTarihiDateTimePicker
+            // 
+            this.dogumTarihiDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.memberInfoBindingSource, "Dogum Tarihi", true));
+            this.dogumTarihiDateTimePicker.Location = new System.Drawing.Point(423, 143);
+            this.dogumTarihiDateTimePicker.Name = "dogumTarihiDateTimePicker";
+            this.dogumTarihiDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.dogumTarihiDateTimePicker.TabIndex = 69;
+            // 
+            // cinsiyet_TextBox
+            // 
+            this.cinsiyet_TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.memberInfoBindingSource, "Cinsiyet ", true));
+            this.cinsiyet_TextBox.Location = new System.Drawing.Point(423, 171);
+            this.cinsiyet_TextBox.Name = "cinsiyet_TextBox";
+            this.cinsiyet_TextBox.Size = new System.Drawing.Size(200, 22);
+            this.cinsiyet_TextBox.TabIndex = 71;
+            // 
+            // boyTextBox
+            // 
+            this.boyTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.memberInfoBindingSource, "Boy", true));
+            this.boyTextBox.Location = new System.Drawing.Point(423, 199);
+            this.boyTextBox.Name = "boyTextBox";
+            this.boyTextBox.Size = new System.Drawing.Size(200, 22);
+            this.boyTextBox.TabIndex = 73;
+            // 
+            // kiloTextBox
+            // 
+            this.kiloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.memberInfoBindingSource, "Kilo", true));
+            this.kiloTextBox.Location = new System.Drawing.Point(423, 227);
+            this.kiloTextBox.Name = "kiloTextBox";
+            this.kiloTextBox.Size = new System.Drawing.Size(200, 22);
+            this.kiloTextBox.TabIndex = 75;
+            // 
+            // antrenorComboBox
+            // 
+            this.antrenorComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.antrenorComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.antrenorComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.membersBindingSource, "Antrenor", true));
+            this.antrenorComboBox.FormattingEnabled = true;
+            this.antrenorComboBox.Location = new System.Drawing.Point(423, 255);
+            this.antrenorComboBox.Name = "antrenorComboBox";
+            this.antrenorComboBox.Size = new System.Drawing.Size(200, 24);
+            this.antrenorComboBox.TabIndex = 76;
+            // 
+            // bransComboBox
+            // 
+            this.bransComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.bransComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.bransComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.membersBindingSource, "Brans", true));
+            this.bransComboBox.FormattingEnabled = true;
+            this.bransComboBox.Location = new System.Drawing.Point(423, 285);
+            this.bransComboBox.Name = "bransComboBox";
+            this.bransComboBox.Size = new System.Drawing.Size(200, 24);
+            this.bransComboBox.TabIndex = 77;
+            // 
+            // browseBox
+            // 
+            this.browseBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
+            this.browseBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.membersBindingSource, "Fotograf", true));
+            this.browseBox.ForeColor = System.Drawing.Color.Black;
+            this.browseBox.Location = new System.Drawing.Point(653, 206);
+            this.browseBox.Name = "browseBox";
+            this.browseBox.Size = new System.Drawing.Size(111, 22);
+            this.browseBox.TabIndex = 78;
             // 
             // addMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(815, 450);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.browseBtn);
+            this.BackgroundImage = global::SporSalonu.Properties.Resources.colors_hd_backgrounds;
+            this.ClientSize = new System.Drawing.Size(831, 377);
             this.Controls.Add(this.browseBox);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.kiloBox);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.lengthBox);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.genderBox);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.birthDateT);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.birthPlaceBox);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.fatherNameBox);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.motherNameBox);
-            this.Controls.Add(this.TC);
-            this.Controls.Add(this.tckBox);
+            this.Controls.Add(bransLabel);
+            this.Controls.Add(this.bransComboBox);
+            this.Controls.Add(antrenorLabel);
+            this.Controls.Add(this.antrenorComboBox);
+            this.Controls.Add(tCLabel);
+            this.Controls.Add(this.tCTextBox);
+            this.Controls.Add(anne_AdiLabel);
+            this.Controls.Add(this.anne_AdiTextBox);
+            this.Controls.Add(baba_AdiLabel);
+            this.Controls.Add(this.baba_AdiTextBox);
+            this.Controls.Add(dogum_YeriLabel);
+            this.Controls.Add(this.dogum_YeriTextBox);
+            this.Controls.Add(dogum_TarihiLabel);
+            this.Controls.Add(this.dogumTarihiDateTimePicker);
+            this.Controls.Add(cinsiyet_Label);
+            this.Controls.Add(this.cinsiyet_TextBox);
+            this.Controls.Add(boyLabel);
+            this.Controls.Add(this.boyTextBox);
+            this.Controls.Add(kiloLabel);
+            this.Controls.Add(this.kiloTextBox);
+            this.Controls.Add(adLabel);
+            this.Controls.Add(this.adTextBox);
+            this.Controls.Add(soyadLabel);
+            this.Controls.Add(this.soyadTextBox);
+            this.Controls.Add(numaraLabel);
+            this.Controls.Add(this.numaraTextBox);
+            this.Controls.Add(uyelik_TipiLabel);
+            this.Controls.Add(this.uyelikTipiComboBox);
+            this.Controls.Add(eMailLabel);
+            this.Controls.Add(this.eMailTextBox);
+            this.Controls.Add(borcLabel);
+            this.Controls.Add(this.borcTextBox);
+            this.Controls.Add(hakkindaLabel);
+            this.Controls.Add(this.hakkindaTextBox);
+            this.Controls.Add(this.browseBtn);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.memberTypeBox);
             this.Controls.Add(this.cancelBtn);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.surnameBox);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.subscriptionBox);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.aboutBox);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.eMailBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.numBox);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.nameBox);
             this.Controls.Add(this.saveBtn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "addMember";
             this.Text = "addMember";
             this.Load += new System.EventHandler(this.addMember_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memberInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -460,44 +587,33 @@
         #endregion
 
         private System.Windows.Forms.Button saveBtn;
-        private System.Windows.Forms.TextBox nameBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox numBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox eMailBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox aboutBox;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox subscriptionBox;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox surnameBox;
         private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.ComboBox memberTypeBox;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label TC;
-        private System.Windows.Forms.TextBox tckBox;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox motherNameBox;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox fatherNameBox;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox birthPlaceBox;
-        private System.Windows.Forms.DateTimePicker birthDateT;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox genderBox;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox lengthBox;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox kiloBox;
-        private System.Windows.Forms.TextBox browseBox;
         private System.Windows.Forms.Button browseBtn;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label16;
+        private DatabaseDataSet databaseDataSet;
+        private System.Windows.Forms.BindingSource membersBindingSource;
+        private DatabaseDataSetTableAdapters.MembersTableAdapter membersTableAdapter;
+        private DatabaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.TextBox adTextBox;
+        private System.Windows.Forms.TextBox soyadTextBox;
+        private System.Windows.Forms.TextBox numaraTextBox;
+        private System.Windows.Forms.ComboBox uyelikTipiComboBox;
+        private System.Windows.Forms.TextBox eMailTextBox;
+        private System.Windows.Forms.TextBox borcTextBox;
+        private System.Windows.Forms.TextBox hakkindaTextBox;
+        private DatabaseDataSetTableAdapters.memberInfoTableAdapter memberInfoTableAdapter;
+        private System.Windows.Forms.BindingSource memberInfoBindingSource;
+        private System.Windows.Forms.TextBox tCTextBox;
+        private System.Windows.Forms.TextBox anne_AdiTextBox;
+        private System.Windows.Forms.TextBox baba_AdiTextBox;
+        private System.Windows.Forms.TextBox dogum_YeriTextBox;
+        private System.Windows.Forms.DateTimePicker dogumTarihiDateTimePicker;
+        private System.Windows.Forms.TextBox cinsiyet_TextBox;
+        private System.Windows.Forms.TextBox boyTextBox;
+        private System.Windows.Forms.TextBox kiloTextBox;
+        private System.Windows.Forms.ComboBox antrenorComboBox;
+        private System.Windows.Forms.ComboBox bransComboBox;
+        private System.Windows.Forms.TextBox browseBox;
     }
 }

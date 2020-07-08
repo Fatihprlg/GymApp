@@ -13,24 +13,24 @@ namespace SporSalonu
 {
     public partial class Form1 : Form
     {
-        
-        public static string remindEMail;
-        public static string remindPassword;
-        //string eMail;
-        //string password;
 
-        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-GROR92P;Initial Catalog=SporSalonu;Integrated Security=True");
+        SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database.mdf;Integrated Security=True;Connect Timeout=30");
         List<BusinessOwner> owners = new List<BusinessOwner>();
         public Form1()
         {
             InitializeComponent();
-            eMailTextBox.Text = remindEMail;
-            passwordTextBox.Text = remindPassword;
-
-
+            remember();
         }
 
-
+        private void remember()
+        {
+            if(Properties.Settings.Default.remme == true)
+            {
+                eMailTextBox.Text = Properties.Settings.Default.Username;
+                passwordTextBox.Text = Properties.Settings.Default.Password;
+                remindMeChck.Checked = true;
+            }
+        }
         private void enterBtn_Click(object sender, EventArgs e)
         {
             
@@ -51,7 +51,7 @@ namespace SporSalonu
                     businessOwner.name = sqlData["Ad"].ToString();
                     businessOwner.surname = sqlData["Soyad"].ToString();
                     businessOwner.password = sqlData["Sifre"].ToString();
-                    businessOwner.businessName = sqlData["KulupAdi"].ToString();
+                    businessOwner.businessName = sqlData["Kulup Adi"].ToString();
                     businessOwner.eMail = sqlData["eMail"].ToString();
                     owners.Add(businessOwner); 
                     break;
@@ -65,10 +65,19 @@ namespace SporSalonu
             {
                 if ((eMailTextBox.Text.ToString() == o.eMail.Trim()) && (passwordTextBox.Text == o.password.Trim()))
                 {
-                    if (remindMeChck.Checked == true)
+                    if (remindMeChck.CheckState == CheckState.Checked)
                     {
-                        remindEMail = eMailTextBox.Text.ToString();
-                        remindPassword = passwordTextBox.Text.ToString();
+                        Properties.Settings.Default.Username = eMailTextBox.Text;
+                        Properties.Settings.Default.Password = passwordTextBox.Text;
+                        Properties.Settings.Default.remme = true;
+                        Properties.Settings.Default.Save();
+                    }
+                    else
+                    {
+                        Properties.Settings.Default.Username = "";
+                        Properties.Settings.Default.Password = "";
+                        Properties.Settings.Default.remme = false;
+                        Properties.Settings.Default.Save();
                     }
                     Form mainMenu = new MainMenu();
                     mainMenu.Show();
@@ -90,6 +99,17 @@ namespace SporSalonu
             this.Hide();
         }
 
-     
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'databaseDataSet.Coaches' table. You can move, or remove it, as needed.
+            this.coachesTableAdapter.Fill(this.databaseDataSet.Coaches);
+            button1.FlatAppearance.BorderSize = 0;
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
