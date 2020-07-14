@@ -65,6 +65,7 @@ namespace SporSalonu
         {
             // TODO: This line of code loads data into the 'databaseDataSet.businessOwner' table. You can move, or remove it, as needed.
             this.businessOwnerTableAdapter.Fill(this.databaseDataSet.businessOwner);
+            this.businessOwnerBindingSource.AddNew();
         }
 
     }

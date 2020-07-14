@@ -35,10 +35,15 @@ namespace SporSalonu
             i++;
             j++;
             worksheet.Cells[i, j].Value2 = s;
+            
         }
         public void Save()
         {
             workbook.Save();
+        }
+        public void SaveAs(string path)
+        {
+            workbook.SaveAs(path);
         }
         public void Close()
         {

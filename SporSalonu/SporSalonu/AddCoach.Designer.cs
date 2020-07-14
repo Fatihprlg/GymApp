@@ -74,7 +74,7 @@
             // 
             adLabel.AutoSize = true;
             adLabel.BackColor = System.Drawing.Color.Transparent;
-            adLabel.ForeColor = System.Drawing.Color.Orange;
+            adLabel.ForeColor = System.Drawing.Color.White;
             adLabel.Location = new System.Drawing.Point(38, 42);
             adLabel.Name = "adLabel";
             adLabel.Size = new System.Drawing.Size(29, 17);
@@ -85,7 +85,7 @@
             // 
             soyadLabel.AutoSize = true;
             soyadLabel.BackColor = System.Drawing.Color.Transparent;
-            soyadLabel.ForeColor = System.Drawing.Color.Orange;
+            soyadLabel.ForeColor = System.Drawing.Color.White;
             soyadLabel.Location = new System.Drawing.Point(38, 70);
             soyadLabel.Name = "soyadLabel";
             soyadLabel.Size = new System.Drawing.Size(52, 17);
@@ -96,7 +96,7 @@
             // 
             bransLabel.AutoSize = true;
             bransLabel.BackColor = System.Drawing.Color.Transparent;
-            bransLabel.ForeColor = System.Drawing.Color.Orange;
+            bransLabel.ForeColor = System.Drawing.Color.White;
             bransLabel.Location = new System.Drawing.Point(38, 98);
             bransLabel.Name = "bransLabel";
             bransLabel.Size = new System.Drawing.Size(49, 17);
@@ -107,7 +107,7 @@
             // 
             numaraLabel.AutoSize = true;
             numaraLabel.BackColor = System.Drawing.Color.Transparent;
-            numaraLabel.ForeColor = System.Drawing.Color.Orange;
+            numaraLabel.ForeColor = System.Drawing.Color.White;
             numaraLabel.Location = new System.Drawing.Point(38, 126);
             numaraLabel.Name = "numaraLabel";
             numaraLabel.Size = new System.Drawing.Size(62, 17);
@@ -118,7 +118,7 @@
             // 
             eMailLabel.AutoSize = true;
             eMailLabel.BackColor = System.Drawing.Color.Transparent;
-            eMailLabel.ForeColor = System.Drawing.Color.Orange;
+            eMailLabel.ForeColor = System.Drawing.Color.White;
             eMailLabel.Location = new System.Drawing.Point(38, 154);
             eMailLabel.Name = "eMailLabel";
             eMailLabel.Size = new System.Drawing.Size(49, 17);
@@ -141,6 +141,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccountingTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.BranchesTableAdapter = null;
             this.tableAdapterManager.BransUyeTableAdapter = null;
@@ -190,7 +191,7 @@
             // 
             this.backBtn.Location = new System.Drawing.Point(283, 92);
             this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(75, 23);
+            this.backBtn.Size = new System.Drawing.Size(75, 25);
             this.backBtn.TabIndex = 11;
             this.backBtn.Text = "İptal";
             this.backBtn.UseVisualStyleBackColor = true;
@@ -239,6 +240,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -344,7 +346,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::SporSalonu.Properties.Resources.colors_hd_backgrounds;
+            this.BackgroundImage = global::SporSalonu.Properties.Resources.gg;
             this.ClientSize = new System.Drawing.Size(445, 212);
             this.Controls.Add(eMailLabel);
             this.Controls.Add(this.eMailTextBox);

@@ -65,7 +65,7 @@
             // 
             adLabel.AutoSize = true;
             adLabel.BackColor = System.Drawing.Color.Transparent;
-            adLabel.ForeColor = System.Drawing.Color.Orange;
+            adLabel.ForeColor = System.Drawing.Color.White;
             adLabel.Location = new System.Drawing.Point(34, 57);
             adLabel.Name = "adLabel";
             adLabel.Size = new System.Drawing.Size(29, 17);
@@ -76,7 +76,7 @@
             // 
             soyadLabel.AutoSize = true;
             soyadLabel.BackColor = System.Drawing.Color.Transparent;
-            soyadLabel.ForeColor = System.Drawing.Color.Orange;
+            soyadLabel.ForeColor = System.Drawing.Color.White;
             soyadLabel.Location = new System.Drawing.Point(34, 85);
             soyadLabel.Name = "soyadLabel";
             soyadLabel.Size = new System.Drawing.Size(52, 17);
@@ -87,7 +87,7 @@
             // 
             kulup_AdiLabel.AutoSize = true;
             kulup_AdiLabel.BackColor = System.Drawing.Color.Transparent;
-            kulup_AdiLabel.ForeColor = System.Drawing.Color.Orange;
+            kulup_AdiLabel.ForeColor = System.Drawing.Color.White;
             kulup_AdiLabel.Location = new System.Drawing.Point(34, 141);
             kulup_AdiLabel.Name = "kulup_AdiLabel";
             kulup_AdiLabel.Size = new System.Drawing.Size(72, 17);
@@ -98,7 +98,7 @@
             // 
             eMailLabel.AutoSize = true;
             eMailLabel.BackColor = System.Drawing.Color.Transparent;
-            eMailLabel.ForeColor = System.Drawing.Color.Orange;
+            eMailLabel.ForeColor = System.Drawing.Color.White;
             eMailLabel.Location = new System.Drawing.Point(34, 113);
             eMailLabel.Name = "eMailLabel";
             eMailLabel.Size = new System.Drawing.Size(49, 17);
@@ -109,7 +109,7 @@
             // 
             sifreLabel.AutoSize = true;
             sifreLabel.BackColor = System.Drawing.Color.Transparent;
-            sifreLabel.ForeColor = System.Drawing.Color.Orange;
+            sifreLabel.ForeColor = System.Drawing.Color.White;
             sifreLabel.Location = new System.Drawing.Point(34, 169);
             sifreLabel.Name = "sifreLabel";
             sifreLabel.Size = new System.Drawing.Size(41, 17);
@@ -130,7 +130,7 @@
             // 
             this.passAgainLbl.AutoSize = true;
             this.passAgainLbl.BackColor = System.Drawing.Color.Transparent;
-            this.passAgainLbl.ForeColor = System.Drawing.Color.Orange;
+            this.passAgainLbl.ForeColor = System.Drawing.Color.White;
             this.passAgainLbl.Location = new System.Drawing.Point(392, 169);
             this.passAgainLbl.Name = "passAgainLbl";
             this.passAgainLbl.Size = new System.Drawing.Size(83, 17);
@@ -191,6 +191,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccountingTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.BranchesTableAdapter = null;
             this.tableAdapterManager.BransUyeTableAdapter = null;
@@ -256,7 +257,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::SporSalonu.Properties.Resources.colors_hd_backgrounds;
+            this.BackgroundImage = global::SporSalonu.Properties.Resources.gg;
             this.ClientSize = new System.Drawing.Size(800, 339);
             this.Controls.Add(adLabel);
             this.Controls.Add(this.nameBox);
@@ -276,6 +277,7 @@
             this.Controls.Add(this.signUpBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "signUpPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "signUpPage";
             this.Load += new System.EventHandler(this.signUpPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();

@@ -31,9 +31,24 @@ namespace SporSalonu
                 remindMeChck.Checked = true;
             }
         }
-        private void enterBtn_Click(object sender, EventArgs e)
+
+        private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'databaseDataSet.Coaches' table. You can move, or remove it, as needed.
+            this.coachesTableAdapter.Fill(this.databaseDataSet.Coaches);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.FlatAppearance.BorderSize = 0;
             
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void enterBtn_Click_1(object sender, EventArgs e)
+        {
             connection.Open();
 
             SqlCommand sqlCommand = new SqlCommand("Select * from businessOwner", connection);
@@ -53,12 +68,12 @@ namespace SporSalonu
                     businessOwner.password = sqlData["Sifre"].ToString();
                     businessOwner.businessName = sqlData["Kulup Adi"].ToString();
                     businessOwner.eMail = sqlData["eMail"].ToString();
-                    owners.Add(businessOwner); 
+                    owners.Add(businessOwner);
                     break;
                 }
                 sayac++;
             }
-            
+
 
             connection.Close();
             foreach (BusinessOwner o in owners)
@@ -92,24 +107,12 @@ namespace SporSalonu
             }
         }
 
-        private void signUpBtn_Click(object sender, EventArgs e)
+        private void signUpBtn_Click_1(object sender, EventArgs e)
         {
             Form signUp = new signUpPage();
             signUp.Show();
             this.Hide();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'databaseDataSet.Coaches' table. You can move, or remove it, as needed.
-            this.coachesTableAdapter.Fill(this.databaseDataSet.Coaches);
-            button1.FlatAppearance.BorderSize = 0;
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }

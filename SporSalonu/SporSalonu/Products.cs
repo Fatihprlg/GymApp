@@ -83,8 +83,18 @@ namespace SporSalonu
 
         private void sellBtn_Click(object sender, EventArgs e)
         {
-            SellProduct sellProduct = new SellProduct();
+            ProductSell sellProduct = new ProductSell();
             sellProduct.Show();
+            productsList.Items.Clear();
+            Products_Load(sender, e);
+        }
+
+        private void updateBtn_Click(object sender, EventArgs e)
+        {
+            UpdateProduct update = new UpdateProduct();
+            update.ShowDialog();
+            productsList.Items.Clear();
+            Products_Load(sender, e);
         }
     }
 }

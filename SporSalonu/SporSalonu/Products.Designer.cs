@@ -99,6 +99,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccountingTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.BranchesTableAdapter = null;
             this.tableAdapterManager.BransUyeTableAdapter = null;
@@ -148,6 +149,7 @@
             this.updateBtn.TabIndex = 4;
             this.updateBtn.Text = "Güncelle";
             this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // backBtn
             // 
@@ -163,7 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::SporSalonu.Properties.Resources.colors_hd_backgrounds;
+            this.BackgroundImage = global::SporSalonu.Properties.Resources.gg;
             this.ClientSize = new System.Drawing.Size(479, 262);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.updateBtn);

@@ -25,14 +25,17 @@ namespace SporSalonu
             addMember.Show();
             this.Hide();
         }
-
+        float borc;
+        float aidat;
+        List<float> borclar = new List<float>();
+        List<DateTime> ayTakibi = new List<DateTime>();
         private void MainMenu_Load(object sender, EventArgs e)
         {
             memberList.FullRowSelect = true;
             button1.FlatAppearance.BorderSize = 0;
             connection.Open();
             
-            SqlCommand showMembers = new SqlCommand("select * from Members", connection);
+            SqlCommand showMembers = new SqlCommand("select * from Members m inner join Branches b on m.Brans = b.Id ", connection);
             SqlDataReader membersReader = showMembers.ExecuteReader();
 
             while (membersReader.Read())
@@ -43,13 +46,57 @@ namespace SporSalonu
                 ListViewItem member = new ListViewItem();
                 member.Text = membersReader["ID"].ToString();
                 member.SubItems.Add(mem.name + " " + mem.surname);
-                member.SubItems.Add(membersReader["Brans"].ToString());
+                member.SubItems.Add(membersReader["Brans Adi"].ToString());
                 member.SubItems.Add(membersReader["eMail"].ToString());
                 member.SubItems.Add(membersReader["Uyelik Tipi"].ToString());
-                member.SubItems.Add(membersReader["Borc"].ToString());
+                DateTime firstDate = Convert.ToDateTime(membersReader["Ay Takibi"]);
+                TimeSpan result = DateTime.Now - firstDate;
+                borc = float.Parse(membersReader["Borc"].ToString());
+                aidat = float.Parse(membersReader["Aidat"].ToString());
+                if (membersReader["Uyelik Tipi"].ToString() == "Aylık")
+                {
+                    if (Convert.ToInt32(result.TotalDays) >= 30)
+                    {
+                        borc += aidat;
+                        firstDate.AddMonths(1);
+
+                    }
+
+                }
+                else if (membersReader["Uyelik Tipi"].ToString() == "Yıllık")
+                {
+                    if (Convert.ToInt32(result.TotalDays) >= 365)
+                    {
+                        borc += aidat;
+                        firstDate.AddMonths(12);
+                    }
+                   
+                }
+                borclar.Add(borc);
+                ayTakibi.Add(firstDate);
+                member.SubItems.Add(borc.ToString());
+                if (borc > aidat)
+                {
+                    member.BackColor = Color.LightCoral;
+                }
+                else
+                {
+                    member.BackColor = Color.FromArgb(208, 235, 255);
+                }
                 memberList.Items.Add(member);
             }
-            connection.Close();
+            connection.Close(); 
+            for (int i = 0; i < memberList.Items.Count; i++)
+            {
+                connection.Open();
+                SqlCommand updateSubs = new SqlCommand("update Members set Borc = @borc, [Ay Takibi] = @ay where ID = @id", connection);
+                updateSubs.Parameters.AddWithValue("@borc", borclar[i]);
+                updateSubs.Parameters.AddWithValue("@ay", ayTakibi[i]);
+                updateSubs.Parameters.AddWithValue("@id", i+1);
+                updateSubs.ExecuteNonQuery();
+                connection.Close();
+            }
+
         }
 
         private void memberList_SelectedIndexChanged(object sender, EventArgs e)
@@ -107,6 +154,20 @@ namespace SporSalonu
         {
             Accounting accounting = new Accounting();
             accounting.Show();
+            this.Hide();
+        }
+
+        private void productsBtn_Click(object sender, EventArgs e)
+        {
+            Products products = new Products();
+            products.Show();
+            this.Hide();
+        }
+
+        private void smsMailBtn_Click(object sender, EventArgs e)
+        {
+            smsMailPage smsMail = new smsMailPage();
+            smsMail.Show();
             this.Hide();
         }
     }

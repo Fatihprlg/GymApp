@@ -51,7 +51,7 @@ namespace SporSalonu
                 member.phoneNumber = numaraTextBox.Text;
                 member.about = hakkindaTextBox.Text;
                 member.eMail = eMailTextBox.Text;
-                member.subscription = int.Parse(borcTextBox.Text);
+                member.subscription = int.Parse(aidatTextBox.Text);
 
                 
                 try
@@ -59,7 +59,7 @@ namespace SporSalonu
                     //this.memberInfoBindingSource.AddNew();
                     
                     connection.Open();
-                    SqlCommand addMember = new SqlCommand("insert into Members(Ad, Soyad, Numara, [Uyelik Tipi], eMail, Borc, Hakkinda, Antrenor, Brans, Fotograf, Aktiflik, [Kayıt Tarihi]) values (@Ad, @Soyad, @Numara, @UyelikTipi, @eMail, @Borc, @Hakkinda, @Antrenor, @Brans, @Fotograf, @Aktiflik, @KayıtTarihi)", connection);
+                    SqlCommand addMember = new SqlCommand("insert into Members(Ad, Soyad, Numara, [Uyelik Tipi], eMail, Borc, Hakkinda, Antrenor, Brans, Fotograf, Aktiflik, [Kayıt Tarihi], [Ay Takibi], Adres) values (@Ad, @Soyad, @Numara, @UyelikTipi, @eMail, @Borc, @Hakkinda, @Antrenor, @Brans, @Fotograf, @Aktiflik, @KayıtTarihi, @ayTajibi, @adres)", connection);
                     addMember.Parameters.AddWithValue("@Ad", member.name);
                     addMember.Parameters.AddWithValue("@Soyad", member.surname);
                     addMember.Parameters.AddWithValue("@Numara", member.phoneNumber);
@@ -72,6 +72,9 @@ namespace SporSalonu
                     addMember.Parameters.AddWithValue("@Fotograf", browseBox.Text);
                     addMember.Parameters.AddWithValue("@Aktiflik", 1);
                     addMember.Parameters.AddWithValue("@KayıtTarihi", DateTime.Now);
+                    addMember.Parameters.AddWithValue("@ayTakibi", DateTime.Now);
+                    addMember.Parameters.AddWithValue("@Adres", adresTextBox.Text);
+                    
 
 
                     addMember.ExecuteNonQuery();
@@ -123,6 +126,8 @@ namespace SporSalonu
             this.memberInfoTableAdapter.Fill(this.databaseDataSet.memberInfo);
             // TODO: This line of code loads data into the 'databaseDataSet.Members' table. You can move, or remove it, as needed.
             this.membersTableAdapter.Fill(this.databaseDataSet.Members);
+            this.memberInfoBindingSource.AddNew();
+            this.membersBindingSource.AddNew();
 
             try
             {

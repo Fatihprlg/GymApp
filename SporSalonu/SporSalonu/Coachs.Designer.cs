@@ -147,6 +147,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccountingTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.BranchesTableAdapter = null;
             this.tableAdapterManager.BransUyeTableAdapter = null;
@@ -162,7 +163,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::SporSalonu.Properties.Resources.colors_hd_backgrounds;
+            this.BackgroundImage = global::SporSalonu.Properties.Resources.gg;
             this.ClientSize = new System.Drawing.Size(798, 429);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.updateBtn);

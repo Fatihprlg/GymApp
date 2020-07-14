@@ -29,6 +29,13 @@ C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalon
 C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.UpdateCoach.resources
 C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.AddProduct.resources
 C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.Products.resources
-C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.SellProduct.resources
 C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.csproj.ResolveComReference.cache
 C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.Accounting.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.csprojAssemblyReference.cache
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.AddExpense.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.AddIncome.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.ProductSell.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.UpdateProduct.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.Receipt.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.smsMailPage.resources
+C:\Users\Fatih\Documents\GitHub\GymApp\SporSalonu\SporSalonu\obj\Debug\SporSalonu.CardForm.resources

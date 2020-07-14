@@ -31,8 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label gelen_ParaLabel;
             System.Windows.Forms.Label açıklamaLabel;
-            System.Windows.Forms.Label tarihLabel;
+            System.Windows.Forms.Label tahsilLabel;
+            System.Windows.Forms.Label tarihLabel1;
             System.Windows.Forms.Label müşteriLabel;
+            System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddIncome));
             this.accountingBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -51,18 +53,23 @@
             this.accountingBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.gelen_ParaTextBox = new System.Windows.Forms.TextBox();
             this.açıklamaTextBox = new System.Windows.Forms.TextBox();
-            this.tarihDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.saveBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
             this.accountingTableAdapter = new SporSalonu.DatabaseDataSetTableAdapters.AccountingTableAdapter();
             this.tableAdapterManager = new SporSalonu.DatabaseDataSetTableAdapters.TableAdapterManager();
             this.membersTableAdapter = new SporSalonu.DatabaseDataSetTableAdapters.MembersTableAdapter();
             this.membersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tahsilCheckBox = new System.Windows.Forms.CheckBox();
+            this.tarihDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.müşteriTextBox = new System.Windows.Forms.TextBox();
+            this.aidatChck = new System.Windows.Forms.CheckBox();
+            this.membersCBox = new System.Windows.Forms.ComboBox();
             gelen_ParaLabel = new System.Windows.Forms.Label();
             açıklamaLabel = new System.Windows.Forms.Label();
-            tarihLabel = new System.Windows.Forms.Label();
+            tahsilLabel = new System.Windows.Forms.Label();
+            tarihLabel1 = new System.Windows.Forms.Label();
             müşteriLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.accountingBindingNavigator)).BeginInit();
             this.accountingBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountingBindingSource)).BeginInit();
@@ -74,7 +81,7 @@
             // 
             gelen_ParaLabel.AutoSize = true;
             gelen_ParaLabel.BackColor = System.Drawing.Color.Transparent;
-            gelen_ParaLabel.ForeColor = System.Drawing.Color.Orange;
+            gelen_ParaLabel.ForeColor = System.Drawing.Color.White;
             gelen_ParaLabel.Location = new System.Drawing.Point(6, 15);
             gelen_ParaLabel.Name = "gelen_ParaLabel";
             gelen_ParaLabel.Size = new System.Drawing.Size(50, 17);
@@ -85,34 +92,56 @@
             // 
             açıklamaLabel.AutoSize = true;
             açıklamaLabel.BackColor = System.Drawing.Color.Transparent;
-            açıklamaLabel.ForeColor = System.Drawing.Color.Orange;
+            açıklamaLabel.ForeColor = System.Drawing.Color.White;
             açıklamaLabel.Location = new System.Drawing.Point(6, 74);
             açıklamaLabel.Name = "açıklamaLabel";
             açıklamaLabel.Size = new System.Drawing.Size(68, 17);
             açıklamaLabel.TabIndex = 9;
             açıklamaLabel.Text = "Açıklama:";
             // 
-            // tarihLabel
+            // tahsilLabel
             // 
-            tarihLabel.AutoSize = true;
-            tarihLabel.BackColor = System.Drawing.Color.Transparent;
-            tarihLabel.ForeColor = System.Drawing.Color.Orange;
-            tarihLabel.Location = new System.Drawing.Point(6, 103);
-            tarihLabel.Name = "tarihLabel";
-            tarihLabel.Size = new System.Drawing.Size(45, 17);
-            tarihLabel.TabIndex = 11;
-            tarihLabel.Text = "Tarih:";
+            tahsilLabel.AutoSize = true;
+            tahsilLabel.BackColor = System.Drawing.Color.Transparent;
+            tahsilLabel.ForeColor = System.Drawing.Color.White;
+            tahsilLabel.Location = new System.Drawing.Point(210, 101);
+            tahsilLabel.Name = "tahsilLabel";
+            tahsilLabel.Size = new System.Drawing.Size(50, 17);
+            tahsilLabel.TabIndex = 15;
+            tahsilLabel.Text = "Tahsil:";
+            // 
+            // tarihLabel1
+            // 
+            tarihLabel1.AutoSize = true;
+            tarihLabel1.BackColor = System.Drawing.Color.Transparent;
+            tarihLabel1.ForeColor = System.Drawing.Color.White;
+            tarihLabel1.Location = new System.Drawing.Point(6, 102);
+            tarihLabel1.Name = "tarihLabel1";
+            tarihLabel1.Size = new System.Drawing.Size(45, 17);
+            tarihLabel1.TabIndex = 16;
+            tarihLabel1.Text = "Tarih:";
             // 
             // müşteriLabel
             // 
             müşteriLabel.AutoSize = true;
             müşteriLabel.BackColor = System.Drawing.Color.Transparent;
-            müşteriLabel.ForeColor = System.Drawing.Color.Orange;
+            müşteriLabel.ForeColor = System.Drawing.Color.White;
             müşteriLabel.Location = new System.Drawing.Point(6, 46);
             müşteriLabel.Name = "müşteriLabel";
             müşteriLabel.Size = new System.Drawing.Size(58, 17);
             müşteriLabel.TabIndex = 14;
             müşteriLabel.Text = "Müşteri:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = System.Drawing.Color.Transparent;
+            label1.ForeColor = System.Drawing.Color.White;
+            label1.Location = new System.Drawing.Point(214, 120);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(44, 17);
+            label1.TabIndex = 19;
+            label1.Text = "Aidat:";
             // 
             // accountingBindingNavigator
             // 
@@ -267,15 +296,6 @@
             this.açıklamaTextBox.Size = new System.Drawing.Size(200, 22);
             this.açıklamaTextBox.TabIndex = 10;
             // 
-            // tarihDateTimePicker
-            // 
-            this.tarihDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.accountingBindingSource, "Tarih", true));
-            this.tarihDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.tarihDateTimePicker.Location = new System.Drawing.Point(96, 99);
-            this.tarihDateTimePicker.Name = "tarihDateTimePicker";
-            this.tarihDateTimePicker.Size = new System.Drawing.Size(85, 22);
-            this.tarihDateTimePicker.TabIndex = 12;
-            // 
             // saveBtn
             // 
             this.saveBtn.Location = new System.Drawing.Point(341, 28);
@@ -323,6 +343,26 @@
             this.membersBindingSource.DataMember = "Members";
             this.membersBindingSource.DataSource = this.databaseDataSet;
             // 
+            // tahsilCheckBox
+            // 
+            this.tahsilCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.tahsilCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.accountingBindingSource, "Tahsil", true));
+            this.tahsilCheckBox.Location = new System.Drawing.Point(264, 99);
+            this.tahsilCheckBox.Name = "tahsilCheckBox";
+            this.tahsilCheckBox.Size = new System.Drawing.Size(32, 24);
+            this.tahsilCheckBox.TabIndex = 16;
+            this.tahsilCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // tarihDateTimePicker1
+            // 
+            this.tarihDateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountingBindingSource, "Tarih", true));
+            this.tarihDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.tarihDateTimePicker1.Location = new System.Drawing.Point(96, 99);
+            this.tarihDateTimePicker1.Name = "tarihDateTimePicker1";
+            this.tarihDateTimePicker1.Size = new System.Drawing.Size(91, 22);
+            this.tarihDateTimePicker1.TabIndex = 17;
+            this.tarihDateTimePicker1.Value = new System.DateTime(2020, 7, 9, 16, 46, 20, 0);
+            // 
             // müşteriTextBox
             // 
             this.müşteriTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountingBindingSource, "Müşteri", true));
@@ -331,12 +371,39 @@
             this.müşteriTextBox.Size = new System.Drawing.Size(200, 22);
             this.müşteriTextBox.TabIndex = 15;
             // 
+            // aidatChck
+            // 
+            this.aidatChck.AutoSize = true;
+            this.aidatChck.BackColor = System.Drawing.Color.Transparent;
+            this.aidatChck.Location = new System.Drawing.Point(264, 121);
+            this.aidatChck.Name = "aidatChck";
+            this.aidatChck.Size = new System.Drawing.Size(18, 17);
+            this.aidatChck.TabIndex = 18;
+            this.aidatChck.UseVisualStyleBackColor = false;
+            this.aidatChck.CheckStateChanged += new System.EventHandler(this.aidatChck_CheckStateChanged);
+            // 
+            // membersCBox
+            // 
+            this.membersCBox.FormattingEnabled = true;
+            this.membersCBox.Location = new System.Drawing.Point(96, 41);
+            this.membersCBox.Name = "membersCBox";
+            this.membersCBox.Size = new System.Drawing.Size(200, 24);
+            this.membersCBox.TabIndex = 20;
+            this.membersCBox.Visible = false;
+            // 
             // AddIncome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::SporSalonu.Properties.Resources.colors_hd_backgrounds;
-            this.ClientSize = new System.Drawing.Size(467, 141);
+            this.BackgroundImage = global::SporSalonu.Properties.Resources.gg;
+            this.ClientSize = new System.Drawing.Size(554, 152);
+            this.Controls.Add(this.membersCBox);
+            this.Controls.Add(label1);
+            this.Controls.Add(this.aidatChck);
+            this.Controls.Add(tarihLabel1);
+            this.Controls.Add(this.tarihDateTimePicker1);
+            this.Controls.Add(tahsilLabel);
+            this.Controls.Add(this.tahsilCheckBox);
             this.Controls.Add(müşteriLabel);
             this.Controls.Add(this.müşteriTextBox);
             this.Controls.Add(this.backBtn);
@@ -345,8 +412,6 @@
             this.Controls.Add(this.gelen_ParaTextBox);
             this.Controls.Add(açıklamaLabel);
             this.Controls.Add(this.açıklamaTextBox);
-            this.Controls.Add(tarihLabel);
-            this.Controls.Add(this.tarihDateTimePicker);
             this.Controls.Add(this.accountingBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddIncome";
@@ -386,10 +451,13 @@
         private DatabaseDataSetTableAdapters.MembersTableAdapter membersTableAdapter;
         private System.Windows.Forms.TextBox gelen_ParaTextBox;
         private System.Windows.Forms.TextBox açıklamaTextBox;
-        private System.Windows.Forms.DateTimePicker tarihDateTimePicker;
         private System.Windows.Forms.BindingSource membersBindingSource;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button backBtn;
+        private System.Windows.Forms.CheckBox tahsilCheckBox;
+        private System.Windows.Forms.DateTimePicker tarihDateTimePicker1;
         private System.Windows.Forms.TextBox müşteriTextBox;
+        private System.Windows.Forms.CheckBox aidatChck;
+        private System.Windows.Forms.ComboBox membersCBox;
     }
 }

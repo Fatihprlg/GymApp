@@ -68,7 +68,7 @@
             // 
             urun_AdiLabel.AutoSize = true;
             urun_AdiLabel.BackColor = System.Drawing.Color.Transparent;
-            urun_AdiLabel.ForeColor = System.Drawing.Color.Orange;
+            urun_AdiLabel.ForeColor = System.Drawing.Color.White;
             urun_AdiLabel.Location = new System.Drawing.Point(22, 44);
             urun_AdiLabel.Name = "urun_AdiLabel";
             urun_AdiLabel.Size = new System.Drawing.Size(67, 17);
@@ -79,7 +79,7 @@
             // 
             fiyatiLabel.AutoSize = true;
             fiyatiLabel.BackColor = System.Drawing.Color.Transparent;
-            fiyatiLabel.ForeColor = System.Drawing.Color.Orange;
+            fiyatiLabel.ForeColor = System.Drawing.Color.White;
             fiyatiLabel.Location = new System.Drawing.Point(22, 72);
             fiyatiLabel.Name = "fiyatiLabel";
             fiyatiLabel.Size = new System.Drawing.Size(45, 17);
@@ -90,7 +90,7 @@
             // 
             stokLabel.AutoSize = true;
             stokLabel.BackColor = System.Drawing.Color.Transparent;
-            stokLabel.ForeColor = System.Drawing.Color.Orange;
+            stokLabel.ForeColor = System.Drawing.Color.White;
             stokLabel.Location = new System.Drawing.Point(22, 100);
             stokLabel.Name = "stokLabel";
             stokLabel.Size = new System.Drawing.Size(40, 17);
@@ -113,6 +113,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccountingTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.BranchesTableAdapter = null;
             this.tableAdapterManager.BransUyeTableAdapter = null;
@@ -208,6 +209,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -298,7 +300,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::SporSalonu.Properties.Resources.colors_hd_backgrounds;
+            this.BackgroundImage = global::SporSalonu.Properties.Resources.gg;
             this.ClientSize = new System.Drawing.Size(352, 141);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);

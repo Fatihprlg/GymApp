@@ -34,6 +34,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.startDate = new System.Windows.Forms.DateTimePicker();
             this.endDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,19 +42,23 @@
             this.incomeBtn = new System.Windows.Forms.Button();
             this.expenseBtn = new System.Windows.Forms.Button();
             this.reportBtn = new System.Windows.Forms.Button();
-            this.invoice = new System.Windows.Forms.Button();
+            this.receiptBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // accountingList
             // 
             this.accountingList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
+            this.accountingList.CheckBoxes = true;
             this.accountingList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5});
+            this.columnHeader5,
+            this.columnHeader6});
+            this.accountingList.ForeColor = System.Drawing.SystemColors.MenuText;
             this.accountingList.FullRowSelect = true;
             this.accountingList.HideSelection = false;
             this.accountingList.Location = new System.Drawing.Point(12, 9);
@@ -62,10 +67,12 @@
             this.accountingList.TabIndex = 0;
             this.accountingList.UseCompatibleStateImageBehavior = false;
             this.accountingList.View = System.Windows.Forms.View.Details;
+            this.accountingList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.accountingList_MouseClick);
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 34;
             // 
             // columnHeader2
             // 
@@ -75,17 +82,21 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Müşteri";
-            this.columnHeader3.Width = 98;
+            this.columnHeader3.Width = 93;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Açıklama";
-            this.columnHeader4.Width = 110;
+            this.columnHeader4.Width = 102;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Tarih";
-            this.columnHeader5.Width = 101;
+            this.columnHeader5.Width = 80;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Tahsil";
             // 
             // startDate
             // 
@@ -108,7 +119,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.Orange;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(481, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 17);
@@ -121,7 +132,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.Color.Orange;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(630, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 17);
@@ -156,15 +167,18 @@
             this.reportBtn.TabIndex = 7;
             this.reportBtn.Text = "Rapor";
             this.reportBtn.UseVisualStyleBackColor = true;
+            this.reportBtn.Click += new System.EventHandler(this.reportBtn_Click);
             // 
-            // invoice
+            // receiptBtn
             // 
-            this.invoice.Location = new System.Drawing.Point(580, 213);
-            this.invoice.Name = "invoice";
-            this.invoice.Size = new System.Drawing.Size(100, 46);
-            this.invoice.TabIndex = 8;
-            this.invoice.Text = "Fatura";
-            this.invoice.UseVisualStyleBackColor = true;
+            this.receiptBtn.Enabled = false;
+            this.receiptBtn.Location = new System.Drawing.Point(580, 213);
+            this.receiptBtn.Name = "receiptBtn";
+            this.receiptBtn.Size = new System.Drawing.Size(100, 46);
+            this.receiptBtn.TabIndex = 8;
+            this.receiptBtn.Text = "Makbuz";
+            this.receiptBtn.UseVisualStyleBackColor = true;
+            this.receiptBtn.Click += new System.EventHandler(this.receiptBtn_Click);
             // 
             // backBtn
             // 
@@ -176,14 +190,19 @@
             this.backBtn.UseVisualStyleBackColor = true;
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "xlsx";
+            this.saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+            // 
             // Accounting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::SporSalonu.Properties.Resources.colors_hd_backgrounds;
+            this.BackgroundImage = global::SporSalonu.Properties.Resources.gg;
             this.ClientSize = new System.Drawing.Size(787, 450);
             this.Controls.Add(this.backBtn);
-            this.Controls.Add(this.invoice);
+            this.Controls.Add(this.receiptBtn);
             this.Controls.Add(this.reportBtn);
             this.Controls.Add(this.expenseBtn);
             this.Controls.Add(this.incomeBtn);
@@ -216,8 +235,10 @@
         private System.Windows.Forms.Button incomeBtn;
         private System.Windows.Forms.Button expenseBtn;
         private System.Windows.Forms.Button reportBtn;
-        private System.Windows.Forms.Button invoice;
+        private System.Windows.Forms.Button receiptBtn;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Button backBtn;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

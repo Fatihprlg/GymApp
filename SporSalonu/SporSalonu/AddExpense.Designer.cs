@@ -29,40 +29,87 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddExpense));
             System.Windows.Forms.Label giden_ParaLabel;
             System.Windows.Forms.Label açıklamaLabel;
             System.Windows.Forms.Label tarihLabel;
+            System.Windows.Forms.Label tahsilLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddExpense));
             this.databaseDataSet = new SporSalonu.DatabaseDataSet();
             this.accountingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.accountingTableAdapter = new SporSalonu.DatabaseDataSetTableAdapters.AccountingTableAdapter();
             this.tableAdapterManager = new SporSalonu.DatabaseDataSetTableAdapters.TableAdapterManager();
             this.accountingBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.accountingBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.giden_ParaTextBox = new System.Windows.Forms.TextBox();
             this.açıklamaTextBox = new System.Windows.Forms.TextBox();
             this.tarihDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.backBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
+            this.tahsilCheckBox = new System.Windows.Forms.CheckBox();
             giden_ParaLabel = new System.Windows.Forms.Label();
             açıklamaLabel = new System.Windows.Forms.Label();
             tarihLabel = new System.Windows.Forms.Label();
+            tahsilLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountingBindingNavigator)).BeginInit();
             this.accountingBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // giden_ParaLabel
+            // 
+            giden_ParaLabel.AutoSize = true;
+            giden_ParaLabel.BackColor = System.Drawing.Color.Transparent;
+            giden_ParaLabel.ForeColor = System.Drawing.Color.White;
+            giden_ParaLabel.Location = new System.Drawing.Point(19, 32);
+            giden_ParaLabel.Name = "giden_ParaLabel";
+            giden_ParaLabel.Size = new System.Drawing.Size(84, 17);
+            giden_ParaLabel.TabIndex = 5;
+            giden_ParaLabel.Text = "Giden Para:";
+            // 
+            // açıklamaLabel
+            // 
+            açıklamaLabel.AutoSize = true;
+            açıklamaLabel.BackColor = System.Drawing.Color.Transparent;
+            açıklamaLabel.ForeColor = System.Drawing.Color.White;
+            açıklamaLabel.Location = new System.Drawing.Point(19, 60);
+            açıklamaLabel.Name = "açıklamaLabel";
+            açıklamaLabel.Size = new System.Drawing.Size(68, 17);
+            açıklamaLabel.TabIndex = 9;
+            açıklamaLabel.Text = "Açıklama:";
+            // 
+            // tarihLabel
+            // 
+            tarihLabel.AutoSize = true;
+            tarihLabel.BackColor = System.Drawing.Color.Transparent;
+            tarihLabel.ForeColor = System.Drawing.Color.White;
+            tarihLabel.Location = new System.Drawing.Point(19, 89);
+            tarihLabel.Name = "tarihLabel";
+            tarihLabel.Size = new System.Drawing.Size(45, 17);
+            tarihLabel.TabIndex = 11;
+            tarihLabel.Text = "Tarih:";
+            // 
+            // tahsilLabel
+            // 
+            tahsilLabel.AutoSize = true;
+            tahsilLabel.BackColor = System.Drawing.Color.Transparent;
+            tahsilLabel.ForeColor = System.Drawing.Color.White;
+            tahsilLabel.Location = new System.Drawing.Point(224, 88);
+            tahsilLabel.Name = "tahsilLabel";
+            tahsilLabel.Size = new System.Drawing.Size(50, 17);
+            tahsilLabel.TabIndex = 16;
+            tahsilLabel.Text = "Tahsil:";
             // 
             // databaseDataSet
             // 
@@ -124,6 +171,31 @@
             this.accountingBindingNavigator.Text = "bindingNavigator1";
             this.accountingBindingNavigator.Visible = false;
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -151,22 +223,14 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
@@ -189,26 +253,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // accountingBindingNavigatorSaveItem
             // 
@@ -219,17 +265,6 @@
             this.accountingBindingNavigatorSaveItem.Text = "Save Data";
             this.accountingBindingNavigatorSaveItem.Click += new System.EventHandler(this.accountingBindingNavigatorSaveItem_Click_1);
             // 
-            // giden_ParaLabel
-            // 
-            giden_ParaLabel.AutoSize = true;
-            giden_ParaLabel.BackColor = System.Drawing.Color.Transparent;
-            giden_ParaLabel.ForeColor = System.Drawing.Color.Orange;
-            giden_ParaLabel.Location = new System.Drawing.Point(19, 32);
-            giden_ParaLabel.Name = "giden_ParaLabel";
-            giden_ParaLabel.Size = new System.Drawing.Size(84, 17);
-            giden_ParaLabel.TabIndex = 5;
-            giden_ParaLabel.Text = "Giden Para:";
-            // 
             // giden_ParaTextBox
             // 
             this.giden_ParaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountingBindingSource, "Giden Para", true));
@@ -238,17 +273,6 @@
             this.giden_ParaTextBox.Size = new System.Drawing.Size(200, 22);
             this.giden_ParaTextBox.TabIndex = 6;
             // 
-            // açıklamaLabel
-            // 
-            açıklamaLabel.AutoSize = true;
-            açıklamaLabel.BackColor = System.Drawing.Color.Transparent;
-            açıklamaLabel.ForeColor = System.Drawing.Color.Orange;
-            açıklamaLabel.Location = new System.Drawing.Point(19, 60);
-            açıklamaLabel.Name = "açıklamaLabel";
-            açıklamaLabel.Size = new System.Drawing.Size(68, 17);
-            açıklamaLabel.TabIndex = 9;
-            açıklamaLabel.Text = "Açıklama:";
-            // 
             // açıklamaTextBox
             // 
             this.açıklamaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountingBindingSource, "Açıklama", true));
@@ -256,17 +280,6 @@
             this.açıklamaTextBox.Name = "açıklamaTextBox";
             this.açıklamaTextBox.Size = new System.Drawing.Size(200, 22);
             this.açıklamaTextBox.TabIndex = 10;
-            // 
-            // tarihLabel
-            // 
-            tarihLabel.AutoSize = true;
-            tarihLabel.BackColor = System.Drawing.Color.Transparent;
-            tarihLabel.ForeColor = System.Drawing.Color.Orange;
-            tarihLabel.Location = new System.Drawing.Point(19, 89);
-            tarihLabel.Name = "tarihLabel";
-            tarihLabel.Size = new System.Drawing.Size(45, 17);
-            tarihLabel.TabIndex = 11;
-            tarihLabel.Text = "Tarih:";
             // 
             // tarihDateTimePicker
             // 
@@ -297,12 +310,24 @@
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
+            // tahsilCheckBox
+            // 
+            this.tahsilCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.tahsilCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.accountingBindingSource, "Tahsil", true));
+            this.tahsilCheckBox.Location = new System.Drawing.Point(280, 87);
+            this.tahsilCheckBox.Name = "tahsilCheckBox";
+            this.tahsilCheckBox.Size = new System.Drawing.Size(29, 24);
+            this.tahsilCheckBox.TabIndex = 17;
+            this.tahsilCheckBox.UseVisualStyleBackColor = false;
+            // 
             // AddExpense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::SporSalonu.Properties.Resources.colors_hd_backgrounds;
-            this.ClientSize = new System.Drawing.Size(467, 141);
+            this.BackgroundImage = global::SporSalonu.Properties.Resources.gg;
+            this.ClientSize = new System.Drawing.Size(467, 138);
+            this.Controls.Add(tahsilLabel);
+            this.Controls.Add(this.tahsilCheckBox);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(giden_ParaLabel);
@@ -314,6 +339,7 @@
             this.Controls.Add(this.accountingBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddExpense";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddExpense";
             this.Load += new System.EventHandler(this.AddExpense_Load);
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
@@ -350,5 +376,6 @@
         private System.Windows.Forms.DateTimePicker tarihDateTimePicker;
         private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.CheckBox tahsilCheckBox;
     }
 }

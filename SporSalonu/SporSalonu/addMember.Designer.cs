@@ -46,6 +46,7 @@
             System.Windows.Forms.Label kiloLabel;
             System.Windows.Forms.Label antrenorLabel;
             System.Windows.Forms.Label bransLabel;
+            System.Windows.Forms.Label adresLabel;
             this.saveBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -61,7 +62,7 @@
             this.numaraTextBox = new System.Windows.Forms.TextBox();
             this.uyelikTipiComboBox = new System.Windows.Forms.ComboBox();
             this.eMailTextBox = new System.Windows.Forms.TextBox();
-            this.borcTextBox = new System.Windows.Forms.TextBox();
+            this.aidatTextBox = new System.Windows.Forms.TextBox();
             this.hakkindaTextBox = new System.Windows.Forms.TextBox();
             this.memberInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tCTextBox = new System.Windows.Forms.TextBox();
@@ -75,6 +76,7 @@
             this.antrenorComboBox = new System.Windows.Forms.ComboBox();
             this.bransComboBox = new System.Windows.Forms.ComboBox();
             this.browseBox = new System.Windows.Forms.TextBox();
+            this.adresTextBox = new System.Windows.Forms.TextBox();
             adLabel = new System.Windows.Forms.Label();
             soyadLabel = new System.Windows.Forms.Label();
             numaraLabel = new System.Windows.Forms.Label();
@@ -92,6 +94,7 @@
             kiloLabel = new System.Windows.Forms.Label();
             antrenorLabel = new System.Windows.Forms.Label();
             bransLabel = new System.Windows.Forms.Label();
+            adresLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.membersBindingSource)).BeginInit();
@@ -102,7 +105,7 @@
             // 
             adLabel.AutoSize = true;
             adLabel.BackColor = System.Drawing.Color.Transparent;
-            adLabel.ForeColor = System.Drawing.Color.Orange;
+            adLabel.ForeColor = System.Drawing.Color.White;
             adLabel.Location = new System.Drawing.Point(55, 36);
             adLabel.Name = "adLabel";
             adLabel.Size = new System.Drawing.Size(29, 17);
@@ -113,7 +116,7 @@
             // 
             soyadLabel.AutoSize = true;
             soyadLabel.BackColor = System.Drawing.Color.Transparent;
-            soyadLabel.ForeColor = System.Drawing.Color.Orange;
+            soyadLabel.ForeColor = System.Drawing.Color.White;
             soyadLabel.Location = new System.Drawing.Point(55, 64);
             soyadLabel.Name = "soyadLabel";
             soyadLabel.Size = new System.Drawing.Size(52, 17);
@@ -124,7 +127,7 @@
             // 
             numaraLabel.AutoSize = true;
             numaraLabel.BackColor = System.Drawing.Color.Transparent;
-            numaraLabel.ForeColor = System.Drawing.Color.Orange;
+            numaraLabel.ForeColor = System.Drawing.Color.White;
             numaraLabel.Location = new System.Drawing.Point(55, 92);
             numaraLabel.Name = "numaraLabel";
             numaraLabel.Size = new System.Drawing.Size(62, 17);
@@ -135,7 +138,7 @@
             // 
             uyelik_TipiLabel.AutoSize = true;
             uyelik_TipiLabel.BackColor = System.Drawing.Color.Transparent;
-            uyelik_TipiLabel.ForeColor = System.Drawing.Color.Orange;
+            uyelik_TipiLabel.ForeColor = System.Drawing.Color.White;
             uyelik_TipiLabel.Location = new System.Drawing.Point(55, 120);
             uyelik_TipiLabel.Name = "uyelik_TipiLabel";
             uyelik_TipiLabel.Size = new System.Drawing.Size(77, 17);
@@ -146,7 +149,7 @@
             // 
             eMailLabel.AutoSize = true;
             eMailLabel.BackColor = System.Drawing.Color.Transparent;
-            eMailLabel.ForeColor = System.Drawing.Color.Orange;
+            eMailLabel.ForeColor = System.Drawing.Color.White;
             eMailLabel.Location = new System.Drawing.Point(55, 151);
             eMailLabel.Name = "eMailLabel";
             eMailLabel.Size = new System.Drawing.Size(51, 17);
@@ -157,7 +160,7 @@
             // 
             borcLabel.AutoSize = true;
             borcLabel.BackColor = System.Drawing.Color.Transparent;
-            borcLabel.ForeColor = System.Drawing.Color.Orange;
+            borcLabel.ForeColor = System.Drawing.Color.White;
             borcLabel.Location = new System.Drawing.Point(55, 179);
             borcLabel.Name = "borcLabel";
             borcLabel.Size = new System.Drawing.Size(44, 17);
@@ -168,8 +171,8 @@
             // 
             hakkindaLabel.AutoSize = true;
             hakkindaLabel.BackColor = System.Drawing.Color.Transparent;
-            hakkindaLabel.ForeColor = System.Drawing.Color.Orange;
-            hakkindaLabel.Location = new System.Drawing.Point(55, 207);
+            hakkindaLabel.ForeColor = System.Drawing.Color.White;
+            hakkindaLabel.Location = new System.Drawing.Point(46, 258);
             hakkindaLabel.Name = "hakkindaLabel";
             hakkindaLabel.Size = new System.Drawing.Size(71, 17);
             hakkindaLabel.TabIndex = 57;
@@ -179,7 +182,7 @@
             // 
             tCLabel.AutoSize = true;
             tCLabel.BackColor = System.Drawing.Color.Transparent;
-            tCLabel.ForeColor = System.Drawing.Color.Orange;
+            tCLabel.ForeColor = System.Drawing.Color.White;
             tCLabel.Location = new System.Drawing.Point(320, 34);
             tCLabel.Name = "tCLabel";
             tCLabel.Size = new System.Drawing.Size(30, 17);
@@ -190,7 +193,7 @@
             // 
             anne_AdiLabel.AutoSize = true;
             anne_AdiLabel.BackColor = System.Drawing.Color.Transparent;
-            anne_AdiLabel.ForeColor = System.Drawing.Color.Orange;
+            anne_AdiLabel.ForeColor = System.Drawing.Color.White;
             anne_AdiLabel.Location = new System.Drawing.Point(320, 62);
             anne_AdiLabel.Name = "anne_AdiLabel";
             anne_AdiLabel.Size = new System.Drawing.Size(69, 17);
@@ -201,7 +204,7 @@
             // 
             baba_AdiLabel.AutoSize = true;
             baba_AdiLabel.BackColor = System.Drawing.Color.Transparent;
-            baba_AdiLabel.ForeColor = System.Drawing.Color.Orange;
+            baba_AdiLabel.ForeColor = System.Drawing.Color.White;
             baba_AdiLabel.Location = new System.Drawing.Point(320, 90);
             baba_AdiLabel.Name = "baba_AdiLabel";
             baba_AdiLabel.Size = new System.Drawing.Size(69, 17);
@@ -212,7 +215,7 @@
             // 
             dogum_YeriLabel.AutoSize = true;
             dogum_YeriLabel.BackColor = System.Drawing.Color.Transparent;
-            dogum_YeriLabel.ForeColor = System.Drawing.Color.Orange;
+            dogum_YeriLabel.ForeColor = System.Drawing.Color.White;
             dogum_YeriLabel.Location = new System.Drawing.Point(320, 118);
             dogum_YeriLabel.Name = "dogum_YeriLabel";
             dogum_YeriLabel.Size = new System.Drawing.Size(86, 17);
@@ -223,7 +226,7 @@
             // 
             dogum_TarihiLabel.AutoSize = true;
             dogum_TarihiLabel.BackColor = System.Drawing.Color.Transparent;
-            dogum_TarihiLabel.ForeColor = System.Drawing.Color.Orange;
+            dogum_TarihiLabel.ForeColor = System.Drawing.Color.White;
             dogum_TarihiLabel.Location = new System.Drawing.Point(320, 147);
             dogum_TarihiLabel.Name = "dogum_TarihiLabel";
             dogum_TarihiLabel.Size = new System.Drawing.Size(97, 17);
@@ -234,7 +237,7 @@
             // 
             cinsiyet_Label.AutoSize = true;
             cinsiyet_Label.BackColor = System.Drawing.Color.Transparent;
-            cinsiyet_Label.ForeColor = System.Drawing.Color.Orange;
+            cinsiyet_Label.ForeColor = System.Drawing.Color.White;
             cinsiyet_Label.Location = new System.Drawing.Point(320, 174);
             cinsiyet_Label.Name = "cinsiyet_Label";
             cinsiyet_Label.Size = new System.Drawing.Size(65, 17);
@@ -245,7 +248,7 @@
             // 
             boyLabel.AutoSize = true;
             boyLabel.BackColor = System.Drawing.Color.Transparent;
-            boyLabel.ForeColor = System.Drawing.Color.Orange;
+            boyLabel.ForeColor = System.Drawing.Color.White;
             boyLabel.Location = new System.Drawing.Point(320, 202);
             boyLabel.Name = "boyLabel";
             boyLabel.Size = new System.Drawing.Size(36, 17);
@@ -256,7 +259,7 @@
             // 
             kiloLabel.AutoSize = true;
             kiloLabel.BackColor = System.Drawing.Color.Transparent;
-            kiloLabel.ForeColor = System.Drawing.Color.Orange;
+            kiloLabel.ForeColor = System.Drawing.Color.White;
             kiloLabel.Location = new System.Drawing.Point(320, 230);
             kiloLabel.Name = "kiloLabel";
             kiloLabel.Size = new System.Drawing.Size(35, 17);
@@ -267,7 +270,7 @@
             // 
             antrenorLabel.AutoSize = true;
             antrenorLabel.BackColor = System.Drawing.Color.Transparent;
-            antrenorLabel.ForeColor = System.Drawing.Color.Orange;
+            antrenorLabel.ForeColor = System.Drawing.Color.White;
             antrenorLabel.Location = new System.Drawing.Point(320, 258);
             antrenorLabel.Name = "antrenorLabel";
             antrenorLabel.Size = new System.Drawing.Size(67, 17);
@@ -278,15 +281,27 @@
             // 
             bransLabel.AutoSize = true;
             bransLabel.BackColor = System.Drawing.Color.Transparent;
-            bransLabel.ForeColor = System.Drawing.Color.Orange;
+            bransLabel.ForeColor = System.Drawing.Color.White;
             bransLabel.Location = new System.Drawing.Point(320, 288);
             bransLabel.Name = "bransLabel";
             bransLabel.Size = new System.Drawing.Size(49, 17);
             bransLabel.TabIndex = 76;
             bransLabel.Text = "Brans:";
             // 
+            // adresLabel
+            // 
+            adresLabel.AutoSize = true;
+            adresLabel.BackColor = System.Drawing.Color.Transparent;
+            adresLabel.ForeColor = System.Drawing.Color.White;
+            adresLabel.Location = new System.Drawing.Point(55, 209);
+            adresLabel.Name = "adresLabel";
+            adresLabel.Size = new System.Drawing.Size(49, 17);
+            adresLabel.TabIndex = 124;
+            adresLabel.Text = "Adres:";
+            // 
             // saveBtn
             // 
+            this.saveBtn.ForeColor = System.Drawing.Color.Black;
             this.saveBtn.Location = new System.Drawing.Point(736, 278);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 31);
@@ -297,6 +312,7 @@
             // 
             // cancelBtn
             // 
+            this.cancelBtn.ForeColor = System.Drawing.Color.Black;
             this.cancelBtn.Location = new System.Drawing.Point(655, 278);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 31);
@@ -317,6 +333,7 @@
             // 
             // browseBtn
             // 
+            this.browseBtn.ForeColor = System.Drawing.Color.Black;
             this.browseBtn.Location = new System.Drawing.Point(770, 205);
             this.browseBtn.Name = "browseBtn";
             this.browseBtn.Size = new System.Drawing.Size(33, 23);
@@ -345,6 +362,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccountingTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.BranchesTableAdapter = null;
             this.tableAdapterManager.BransUyeTableAdapter = null;
@@ -407,21 +425,21 @@
             this.eMailTextBox.Size = new System.Drawing.Size(167, 22);
             this.eMailTextBox.TabIndex = 54;
             // 
-            // borcTextBox
+            // aidatTextBox
             // 
-            this.borcTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.membersBindingSource, "Borc", true));
-            this.borcTextBox.Location = new System.Drawing.Point(138, 176);
-            this.borcTextBox.Name = "borcTextBox";
-            this.borcTextBox.Size = new System.Drawing.Size(167, 22);
-            this.borcTextBox.TabIndex = 56;
+            this.aidatTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.membersBindingSource, "Aidat", true));
+            this.aidatTextBox.Location = new System.Drawing.Point(138, 176);
+            this.aidatTextBox.Name = "aidatTextBox";
+            this.aidatTextBox.Size = new System.Drawing.Size(167, 22);
+            this.aidatTextBox.TabIndex = 56;
             // 
             // hakkindaTextBox
             // 
             this.hakkindaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.membersBindingSource, "Hakkinda", true));
-            this.hakkindaTextBox.Location = new System.Drawing.Point(138, 207);
+            this.hakkindaTextBox.Location = new System.Drawing.Point(138, 258);
             this.hakkindaTextBox.Multiline = true;
             this.hakkindaTextBox.Name = "hakkindaTextBox";
-            this.hakkindaTextBox.Size = new System.Drawing.Size(167, 98);
+            this.hakkindaTextBox.Size = new System.Drawing.Size(167, 47);
             this.hakkindaTextBox.TabIndex = 58;
             // 
             // memberInfoBindingSource
@@ -471,7 +489,7 @@
             // 
             // cinsiyet_TextBox
             // 
-            this.cinsiyet_TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.memberInfoBindingSource, "Cinsiyet ", true));
+            this.cinsiyet_TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.memberInfoBindingSource, "Cinsiyet", true));
             this.cinsiyet_TextBox.Location = new System.Drawing.Point(423, 171);
             this.cinsiyet_TextBox.Name = "cinsiyet_TextBox";
             this.cinsiyet_TextBox.Size = new System.Drawing.Size(200, 22);
@@ -525,13 +543,24 @@
             this.browseBox.Size = new System.Drawing.Size(111, 22);
             this.browseBox.TabIndex = 78;
             // 
+            // adresTextBox
+            // 
+            this.adresTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.membersBindingSource, "Adres", true));
+            this.adresTextBox.Location = new System.Drawing.Point(138, 206);
+            this.adresTextBox.Multiline = true;
+            this.adresTextBox.Name = "adresTextBox";
+            this.adresTextBox.Size = new System.Drawing.Size(167, 45);
+            this.adresTextBox.TabIndex = 125;
+            // 
             // addMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.BackgroundImage = global::SporSalonu.Properties.Resources.colors_hd_backgrounds;
+            this.BackgroundImage = global::SporSalonu.Properties.Resources.gg;
             this.ClientSize = new System.Drawing.Size(831, 377);
+            this.Controls.Add(adresLabel);
+            this.Controls.Add(this.adresTextBox);
             this.Controls.Add(this.browseBox);
             this.Controls.Add(bransLabel);
             this.Controls.Add(this.bransComboBox);
@@ -564,13 +593,14 @@
             this.Controls.Add(eMailLabel);
             this.Controls.Add(this.eMailTextBox);
             this.Controls.Add(borcLabel);
-            this.Controls.Add(this.borcTextBox);
+            this.Controls.Add(this.aidatTextBox);
             this.Controls.Add(hakkindaLabel);
             this.Controls.Add(this.hakkindaTextBox);
             this.Controls.Add(this.browseBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "addMember";
             this.Text = "addMember";
@@ -600,7 +630,7 @@
         private System.Windows.Forms.TextBox numaraTextBox;
         private System.Windows.Forms.ComboBox uyelikTipiComboBox;
         private System.Windows.Forms.TextBox eMailTextBox;
-        private System.Windows.Forms.TextBox borcTextBox;
+        private System.Windows.Forms.TextBox aidatTextBox;
         private System.Windows.Forms.TextBox hakkindaTextBox;
         private DatabaseDataSetTableAdapters.memberInfoTableAdapter memberInfoTableAdapter;
         private System.Windows.Forms.BindingSource memberInfoBindingSource;
@@ -615,5 +645,6 @@
         private System.Windows.Forms.ComboBox antrenorComboBox;
         private System.Windows.Forms.ComboBox bransComboBox;
         private System.Windows.Forms.TextBox browseBox;
+        private System.Windows.Forms.TextBox adresTextBox;
     }
 }

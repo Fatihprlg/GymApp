@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label bransLabel;
             System.Windows.Forms.Label antrenorLabel;
             System.Windows.Forms.Label tCLabel;
@@ -45,6 +46,8 @@
             System.Windows.Forms.Label eMailLabel;
             System.Windows.Forms.Label borcLabel;
             System.Windows.Forms.Label hakkindaLabel;
+            System.Windows.Forms.Label adresLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberDetails));
             this.bransComboBox = new System.Windows.Forms.ComboBox();
             this.antrenorComboBox = new System.Windows.Forms.ComboBox();
             this.tCTextBox = new System.Windows.Forms.TextBox();
@@ -60,7 +63,7 @@
             this.numaraTextBox = new System.Windows.Forms.TextBox();
             this.uyelikTipiComboBox = new System.Windows.Forms.ComboBox();
             this.eMailTextBox = new System.Windows.Forms.TextBox();
-            this.borcTextBox = new System.Windows.Forms.TextBox();
+            this.aidatTextBox = new System.Windows.Forms.TextBox();
             this.hakkindaTextBox = new System.Windows.Forms.TextBox();
             this.browseBox = new System.Windows.Forms.TextBox();
             this.browseBtn = new System.Windows.Forms.Button();
@@ -72,6 +75,25 @@
             this.licenceBtn = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.aktiflikCheck = new System.Windows.Forms.CheckBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.databaseDataSet = new SporSalonu.DatabaseDataSet();
+            this.membersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.membersTableAdapter = new SporSalonu.DatabaseDataSetTableAdapters.MembersTableAdapter();
+            this.tableAdapterManager = new SporSalonu.DatabaseDataSetTableAdapters.TableAdapterManager();
+            this.membersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.membersBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.adresTextBox = new System.Windows.Forms.TextBox();
             bransLabel = new System.Windows.Forms.Label();
             antrenorLabel = new System.Windows.Forms.Label();
             tCLabel = new System.Windows.Forms.Label();
@@ -89,14 +111,19 @@
             eMailLabel = new System.Windows.Forms.Label();
             borcLabel = new System.Windows.Forms.Label();
             hakkindaLabel = new System.Windows.Forms.Label();
+            adresLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membersBindingNavigator)).BeginInit();
+            this.membersBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
             // bransLabel
             // 
             bransLabel.AutoSize = true;
             bransLabel.BackColor = System.Drawing.Color.Transparent;
-            bransLabel.ForeColor = System.Drawing.Color.Orange;
+            bransLabel.ForeColor = System.Drawing.Color.White;
             bransLabel.Location = new System.Drawing.Point(279, 292);
             bransLabel.Name = "bransLabel";
             bransLabel.Size = new System.Drawing.Size(49, 17);
@@ -107,7 +134,7 @@
             // 
             antrenorLabel.AutoSize = true;
             antrenorLabel.BackColor = System.Drawing.Color.Transparent;
-            antrenorLabel.ForeColor = System.Drawing.Color.Orange;
+            antrenorLabel.ForeColor = System.Drawing.Color.White;
             antrenorLabel.Location = new System.Drawing.Point(279, 262);
             antrenorLabel.Name = "antrenorLabel";
             antrenorLabel.Size = new System.Drawing.Size(67, 17);
@@ -118,7 +145,7 @@
             // 
             tCLabel.AutoSize = true;
             tCLabel.BackColor = System.Drawing.Color.Transparent;
-            tCLabel.ForeColor = System.Drawing.Color.Orange;
+            tCLabel.ForeColor = System.Drawing.Color.White;
             tCLabel.Location = new System.Drawing.Point(279, 38);
             tCLabel.Name = "tCLabel";
             tCLabel.Size = new System.Drawing.Size(30, 17);
@@ -129,7 +156,7 @@
             // 
             anne_AdiLabel.AutoSize = true;
             anne_AdiLabel.BackColor = System.Drawing.Color.Transparent;
-            anne_AdiLabel.ForeColor = System.Drawing.Color.Orange;
+            anne_AdiLabel.ForeColor = System.Drawing.Color.White;
             anne_AdiLabel.Location = new System.Drawing.Point(279, 66);
             anne_AdiLabel.Name = "anne_AdiLabel";
             anne_AdiLabel.Size = new System.Drawing.Size(69, 17);
@@ -140,7 +167,7 @@
             // 
             baba_AdiLabel.AutoSize = true;
             baba_AdiLabel.BackColor = System.Drawing.Color.Transparent;
-            baba_AdiLabel.ForeColor = System.Drawing.Color.Orange;
+            baba_AdiLabel.ForeColor = System.Drawing.Color.White;
             baba_AdiLabel.Location = new System.Drawing.Point(279, 94);
             baba_AdiLabel.Name = "baba_AdiLabel";
             baba_AdiLabel.Size = new System.Drawing.Size(69, 17);
@@ -151,7 +178,7 @@
             // 
             dogum_YeriLabel.AutoSize = true;
             dogum_YeriLabel.BackColor = System.Drawing.Color.Transparent;
-            dogum_YeriLabel.ForeColor = System.Drawing.Color.Orange;
+            dogum_YeriLabel.ForeColor = System.Drawing.Color.White;
             dogum_YeriLabel.Location = new System.Drawing.Point(279, 122);
             dogum_YeriLabel.Name = "dogum_YeriLabel";
             dogum_YeriLabel.Size = new System.Drawing.Size(86, 17);
@@ -162,7 +189,7 @@
             // 
             dogum_TarihiLabel.AutoSize = true;
             dogum_TarihiLabel.BackColor = System.Drawing.Color.Transparent;
-            dogum_TarihiLabel.ForeColor = System.Drawing.Color.Orange;
+            dogum_TarihiLabel.ForeColor = System.Drawing.Color.White;
             dogum_TarihiLabel.Location = new System.Drawing.Point(279, 151);
             dogum_TarihiLabel.Name = "dogum_TarihiLabel";
             dogum_TarihiLabel.Size = new System.Drawing.Size(97, 17);
@@ -173,7 +200,7 @@
             // 
             cinsiyet_Label.AutoSize = true;
             cinsiyet_Label.BackColor = System.Drawing.Color.Transparent;
-            cinsiyet_Label.ForeColor = System.Drawing.Color.Orange;
+            cinsiyet_Label.ForeColor = System.Drawing.Color.White;
             cinsiyet_Label.Location = new System.Drawing.Point(279, 178);
             cinsiyet_Label.Name = "cinsiyet_Label";
             cinsiyet_Label.Size = new System.Drawing.Size(65, 17);
@@ -184,7 +211,7 @@
             // 
             boyLabel.AutoSize = true;
             boyLabel.BackColor = System.Drawing.Color.Transparent;
-            boyLabel.ForeColor = System.Drawing.Color.Orange;
+            boyLabel.ForeColor = System.Drawing.Color.White;
             boyLabel.Location = new System.Drawing.Point(279, 206);
             boyLabel.Name = "boyLabel";
             boyLabel.Size = new System.Drawing.Size(36, 17);
@@ -195,7 +222,7 @@
             // 
             kiloLabel.AutoSize = true;
             kiloLabel.BackColor = System.Drawing.Color.Transparent;
-            kiloLabel.ForeColor = System.Drawing.Color.Orange;
+            kiloLabel.ForeColor = System.Drawing.Color.White;
             kiloLabel.Location = new System.Drawing.Point(279, 234);
             kiloLabel.Name = "kiloLabel";
             kiloLabel.Size = new System.Drawing.Size(35, 17);
@@ -206,7 +233,7 @@
             // 
             adLabel.AutoSize = true;
             adLabel.BackColor = System.Drawing.Color.Transparent;
-            adLabel.ForeColor = System.Drawing.Color.Orange;
+            adLabel.ForeColor = System.Drawing.Color.White;
             adLabel.Location = new System.Drawing.Point(14, 40);
             adLabel.Name = "adLabel";
             adLabel.Size = new System.Drawing.Size(29, 17);
@@ -217,7 +244,7 @@
             // 
             soyadLabel.AutoSize = true;
             soyadLabel.BackColor = System.Drawing.Color.Transparent;
-            soyadLabel.ForeColor = System.Drawing.Color.Orange;
+            soyadLabel.ForeColor = System.Drawing.Color.White;
             soyadLabel.Location = new System.Drawing.Point(14, 68);
             soyadLabel.Name = "soyadLabel";
             soyadLabel.Size = new System.Drawing.Size(52, 17);
@@ -228,7 +255,7 @@
             // 
             numaraLabel.AutoSize = true;
             numaraLabel.BackColor = System.Drawing.Color.Transparent;
-            numaraLabel.ForeColor = System.Drawing.Color.Orange;
+            numaraLabel.ForeColor = System.Drawing.Color.White;
             numaraLabel.Location = new System.Drawing.Point(14, 96);
             numaraLabel.Name = "numaraLabel";
             numaraLabel.Size = new System.Drawing.Size(62, 17);
@@ -239,7 +266,7 @@
             // 
             uyelik_TipiLabel.AutoSize = true;
             uyelik_TipiLabel.BackColor = System.Drawing.Color.Transparent;
-            uyelik_TipiLabel.ForeColor = System.Drawing.Color.Orange;
+            uyelik_TipiLabel.ForeColor = System.Drawing.Color.White;
             uyelik_TipiLabel.Location = new System.Drawing.Point(14, 124);
             uyelik_TipiLabel.Name = "uyelik_TipiLabel";
             uyelik_TipiLabel.Size = new System.Drawing.Size(77, 17);
@@ -250,7 +277,7 @@
             // 
             eMailLabel.AutoSize = true;
             eMailLabel.BackColor = System.Drawing.Color.Transparent;
-            eMailLabel.ForeColor = System.Drawing.Color.Orange;
+            eMailLabel.ForeColor = System.Drawing.Color.White;
             eMailLabel.Location = new System.Drawing.Point(14, 155);
             eMailLabel.Name = "eMailLabel";
             eMailLabel.Size = new System.Drawing.Size(51, 17);
@@ -261,7 +288,7 @@
             // 
             borcLabel.AutoSize = true;
             borcLabel.BackColor = System.Drawing.Color.Transparent;
-            borcLabel.ForeColor = System.Drawing.Color.Orange;
+            borcLabel.ForeColor = System.Drawing.Color.White;
             borcLabel.Location = new System.Drawing.Point(14, 183);
             borcLabel.Name = "borcLabel";
             borcLabel.Size = new System.Drawing.Size(44, 17);
@@ -272,12 +299,23 @@
             // 
             hakkindaLabel.AutoSize = true;
             hakkindaLabel.BackColor = System.Drawing.Color.Transparent;
-            hakkindaLabel.ForeColor = System.Drawing.Color.Orange;
-            hakkindaLabel.Location = new System.Drawing.Point(14, 211);
+            hakkindaLabel.ForeColor = System.Drawing.Color.White;
+            hakkindaLabel.Location = new System.Drawing.Point(14, 259);
             hakkindaLabel.Name = "hakkindaLabel";
             hakkindaLabel.Size = new System.Drawing.Size(71, 17);
             hakkindaLabel.TabIndex = 90;
             hakkindaLabel.Text = "Hakkinda:";
+            // 
+            // adresLabel
+            // 
+            adresLabel.AutoSize = true;
+            adresLabel.BackColor = System.Drawing.Color.Transparent;
+            adresLabel.ForeColor = System.Drawing.Color.White;
+            adresLabel.Location = new System.Drawing.Point(14, 211);
+            adresLabel.Name = "adresLabel";
+            adresLabel.Size = new System.Drawing.Size(49, 17);
+            adresLabel.TabIndex = 122;
+            adresLabel.Text = "Adres:";
             // 
             // bransComboBox
             // 
@@ -398,19 +436,19 @@
             this.eMailTextBox.Size = new System.Drawing.Size(167, 22);
             this.eMailTextBox.TabIndex = 87;
             // 
-            // borcTextBox
+            // aidatTextBox
             // 
-            this.borcTextBox.Location = new System.Drawing.Point(97, 180);
-            this.borcTextBox.Name = "borcTextBox";
-            this.borcTextBox.Size = new System.Drawing.Size(167, 22);
-            this.borcTextBox.TabIndex = 89;
+            this.aidatTextBox.Location = new System.Drawing.Point(97, 180);
+            this.aidatTextBox.Name = "aidatTextBox";
+            this.aidatTextBox.Size = new System.Drawing.Size(167, 22);
+            this.aidatTextBox.TabIndex = 89;
             // 
             // hakkindaTextBox
             // 
-            this.hakkindaTextBox.Location = new System.Drawing.Point(97, 211);
+            this.hakkindaTextBox.Location = new System.Drawing.Point(97, 259);
             this.hakkindaTextBox.Multiline = true;
             this.hakkindaTextBox.Name = "hakkindaTextBox";
-            this.hakkindaTextBox.Size = new System.Drawing.Size(167, 98);
+            this.hakkindaTextBox.Size = new System.Drawing.Size(167, 48);
             this.hakkindaTextBox.TabIndex = 91;
             // 
             // browseBox
@@ -424,6 +462,7 @@
             // 
             // browseBtn
             // 
+            this.browseBtn.ForeColor = System.Drawing.Color.Black;
             this.browseBtn.Location = new System.Drawing.Point(740, 228);
             this.browseBtn.Name = "browseBtn";
             this.browseBtn.Size = new System.Drawing.Size(33, 23);
@@ -446,7 +485,7 @@
             // 
             this.kayitTarihiLbl.AutoSize = true;
             this.kayitTarihiLbl.BackColor = System.Drawing.Color.Transparent;
-            this.kayitTarihiLbl.ForeColor = System.Drawing.Color.Orange;
+            this.kayitTarihiLbl.ForeColor = System.Drawing.Color.White;
             this.kayitTarihiLbl.Location = new System.Drawing.Point(620, 292);
             this.kayitTarihiLbl.Name = "kayitTarihiLbl";
             this.kayitTarihiLbl.Size = new System.Drawing.Size(46, 17);
@@ -455,6 +494,7 @@
             // 
             // updateBtn
             // 
+            this.updateBtn.ForeColor = System.Drawing.Color.Black;
             this.updateBtn.Location = new System.Drawing.Point(578, 337);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(101, 54);
@@ -465,6 +505,7 @@
             // 
             // backBtn
             // 
+            this.backBtn.ForeColor = System.Drawing.Color.Black;
             this.backBtn.Location = new System.Drawing.Point(685, 337);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(103, 54);
@@ -475,15 +516,18 @@
             // 
             // cardBtn
             // 
+            this.cardBtn.ForeColor = System.Drawing.Color.Black;
             this.cardBtn.Location = new System.Drawing.Point(461, 337);
             this.cardBtn.Name = "cardBtn";
             this.cardBtn.Size = new System.Drawing.Size(111, 54);
             this.cardBtn.TabIndex = 119;
             this.cardBtn.Text = "Sporcu Kartı";
             this.cardBtn.UseVisualStyleBackColor = true;
+            this.cardBtn.Click += new System.EventHandler(this.cardBtn_Click);
             // 
             // licenceBtn
             // 
+            this.licenceBtn.ForeColor = System.Drawing.Color.Black;
             this.licenceBtn.Location = new System.Drawing.Point(356, 337);
             this.licenceBtn.Name = "licenceBtn";
             this.licenceBtn.Size = new System.Drawing.Size(99, 54);
@@ -500,7 +544,7 @@
             // 
             this.aktiflikCheck.AutoSize = true;
             this.aktiflikCheck.BackColor = System.Drawing.Color.Transparent;
-            this.aktiflikCheck.ForeColor = System.Drawing.Color.Orange;
+            this.aktiflikCheck.ForeColor = System.Drawing.Color.White;
             this.aktiflikCheck.Location = new System.Drawing.Point(600, 268);
             this.aktiflikCheck.Name = "aktiflikCheck";
             this.aktiflikCheck.Size = new System.Drawing.Size(98, 21);
@@ -509,12 +553,179 @@
             this.aktiflikCheck.UseVisualStyleBackColor = false;
             this.aktiflikCheck.CheckedChanged += new System.EventHandler(this.aktiflikCheck_CheckedChanged);
             // 
+            // databaseDataSet
+            // 
+            this.databaseDataSet.DataSetName = "DatabaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // membersBindingSource
+            // 
+            this.membersBindingSource.DataMember = "Members";
+            this.membersBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // membersTableAdapter
+            // 
+            this.membersTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AccountingTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BranchesTableAdapter = null;
+            this.tableAdapterManager.BransUyeTableAdapter = null;
+            this.tableAdapterManager.businessOwnerTableAdapter = null;
+            this.tableAdapterManager.CoachesTableAdapter = null;
+            this.tableAdapterManager.memberInfoTableAdapter = null;
+            this.tableAdapterManager.MembersTableAdapter = this.membersTableAdapter;
+            this.tableAdapterManager.ProductsTableAdapter = null;
+            this.tableAdapterManager.SellTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = SporSalonu.DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // membersBindingNavigator
+            // 
+            this.membersBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.membersBindingNavigator.BindingSource = this.membersBindingSource;
+            this.membersBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.membersBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.membersBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.membersBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.membersBindingNavigatorSaveItem});
+            this.membersBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.membersBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.membersBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.membersBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.membersBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.membersBindingNavigator.Name = "membersBindingNavigator";
+            this.membersBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.membersBindingNavigator.Size = new System.Drawing.Size(808, 27);
+            this.membersBindingNavigator.TabIndex = 122;
+            this.membersBindingNavigator.Text = "bindingNavigator1";
+            this.membersBindingNavigator.Visible = false;
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // membersBindingNavigatorSaveItem
+            // 
+            this.membersBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.membersBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("membersBindingNavigatorSaveItem.Image")));
+            this.membersBindingNavigatorSaveItem.Name = "membersBindingNavigatorSaveItem";
+            this.membersBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
+            this.membersBindingNavigatorSaveItem.Text = "Save Data";
+            this.membersBindingNavigatorSaveItem.Click += new System.EventHandler(this.membersBindingNavigatorSaveItem_Click);
+            // 
+            // adresTextBox
+            // 
+            this.adresTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.membersBindingSource, "Adres", true));
+            this.adresTextBox.Location = new System.Drawing.Point(97, 208);
+            this.adresTextBox.Multiline = true;
+            this.adresTextBox.Name = "adresTextBox";
+            this.adresTextBox.Size = new System.Drawing.Size(167, 45);
+            this.adresTextBox.TabIndex = 123;
+            // 
             // MemberDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::SporSalonu.Properties.Resources.colors_hd_backgrounds;
-            this.ClientSize = new System.Drawing.Size(800, 409);
+            this.BackgroundImage = global::SporSalonu.Properties.Resources.gg;
+            this.ClientSize = new System.Drawing.Size(808, 411);
+            this.Controls.Add(adresLabel);
+            this.Controls.Add(this.adresTextBox);
+            this.Controls.Add(this.membersBindingNavigator);
             this.Controls.Add(this.aktiflikCheck);
             this.Controls.Add(this.licenceBtn);
             this.Controls.Add(this.cardBtn);
@@ -555,15 +766,21 @@
             this.Controls.Add(eMailLabel);
             this.Controls.Add(this.eMailTextBox);
             this.Controls.Add(borcLabel);
-            this.Controls.Add(this.borcTextBox);
+            this.Controls.Add(this.aidatTextBox);
             this.Controls.Add(hakkindaLabel);
             this.Controls.Add(this.hakkindaTextBox);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MemberDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MemberDetails";
             this.Load += new System.EventHandler(this.MemberDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membersBindingNavigator)).EndInit();
+            this.membersBindingNavigator.ResumeLayout(false);
+            this.membersBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -586,7 +803,7 @@
         private System.Windows.Forms.TextBox numaraTextBox;
         private System.Windows.Forms.ComboBox uyelikTipiComboBox;
         private System.Windows.Forms.TextBox eMailTextBox;
-        private System.Windows.Forms.TextBox borcTextBox;
+        private System.Windows.Forms.TextBox aidatTextBox;
         private System.Windows.Forms.TextBox hakkindaTextBox;
         private System.Windows.Forms.TextBox browseBox;
         private System.Windows.Forms.Button browseBtn;
@@ -598,5 +815,24 @@
         private System.Windows.Forms.Button licenceBtn;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.CheckBox aktiflikCheck;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private DatabaseDataSet databaseDataSet;
+        private System.Windows.Forms.BindingSource membersBindingSource;
+        private DatabaseDataSetTableAdapters.MembersTableAdapter membersTableAdapter;
+        private DatabaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingNavigator membersBindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton membersBindingNavigatorSaveItem;
+        private System.Windows.Forms.TextBox adresTextBox;
     }
 }

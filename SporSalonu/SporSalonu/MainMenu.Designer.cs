@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.newMemberBtn = new System.Windows.Forms.Button();
             this.deleteMember = new System.Windows.Forms.Button();
             this.showMemberStatus = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@
             this.productsBtn = new System.Windows.Forms.Button();
             this.accountingBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.smsMailBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // newMemberBtn
@@ -129,7 +131,7 @@
             // 
             this.coachsBtn.Location = new System.Drawing.Point(730, 144);
             this.coachsBtn.Name = "coachsBtn";
-            this.coachsBtn.Size = new System.Drawing.Size(113, 57);
+            this.coachsBtn.Size = new System.Drawing.Size(113, 50);
             this.coachsBtn.TabIndex = 7;
             this.coachsBtn.Text = "Antrenörler";
             this.coachsBtn.UseVisualStyleBackColor = true;
@@ -137,25 +139,26 @@
             // 
             // branchs
             // 
-            this.branchs.Location = new System.Drawing.Point(730, 207);
+            this.branchs.Location = new System.Drawing.Point(730, 200);
             this.branchs.Name = "branchs";
-            this.branchs.Size = new System.Drawing.Size(113, 57);
+            this.branchs.Size = new System.Drawing.Size(113, 50);
             this.branchs.TabIndex = 8;
             this.branchs.Text = "Branşlar";
             this.branchs.UseVisualStyleBackColor = true;
             // 
             // productsBtn
             // 
-            this.productsBtn.Location = new System.Drawing.Point(730, 270);
+            this.productsBtn.Location = new System.Drawing.Point(730, 255);
             this.productsBtn.Name = "productsBtn";
             this.productsBtn.Size = new System.Drawing.Size(113, 57);
             this.productsBtn.TabIndex = 9;
             this.productsBtn.Text = "Ürünler";
             this.productsBtn.UseVisualStyleBackColor = true;
+            this.productsBtn.Click += new System.EventHandler(this.productsBtn_Click);
             // 
             // accountingBtn
             // 
-            this.accountingBtn.Location = new System.Drawing.Point(730, 333);
+            this.accountingBtn.Location = new System.Drawing.Point(730, 318);
             this.accountingBtn.Name = "accountingBtn";
             this.accountingBtn.Size = new System.Drawing.Size(113, 57);
             this.accountingBtn.TabIndex = 10;
@@ -165,25 +168,38 @@
             // 
             // button1
             // 
+            this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::SporSalonu.Properties.Resources.logout;
+            this.button1.BackgroundImage = global::SporSalonu.Properties.Resources.Varlık_1;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(800, 443);
+            this.button1.Location = new System.Drawing.Point(811, 457);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 46);
+            this.button1.Size = new System.Drawing.Size(32, 32);
             this.button1.TabIndex = 11;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // smsMailBtn
+            // 
+            this.smsMailBtn.Location = new System.Drawing.Point(730, 381);
+            this.smsMailBtn.Name = "smsMailBtn";
+            this.smsMailBtn.Size = new System.Drawing.Size(113, 57);
+            this.smsMailBtn.TabIndex = 12;
+            this.smsMailBtn.Text = "SMS/Mail Gönder";
+            this.smsMailBtn.UseVisualStyleBackColor = true;
+            this.smsMailBtn.Click += new System.EventHandler(this.smsMailBtn_Click);
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::SporSalonu.Properties.Resources.colors_hd_backgrounds;
+            this.BackgroundImage = global::SporSalonu.Properties.Resources.gg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(855, 501);
+            this.Controls.Add(this.smsMailBtn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.accountingBtn);
             this.Controls.Add(this.productsBtn);
@@ -193,12 +209,15 @@
             this.Controls.Add(this.showMemberStatus);
             this.Controls.Add(this.deleteMember);
             this.Controls.Add(this.newMemberBtn);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
             this.Load += new System.EventHandler(this.MainMenu_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -218,5 +237,6 @@
         private System.Windows.Forms.Button productsBtn;
         private System.Windows.Forms.Button accountingBtn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button smsMailBtn;
     }
 }
